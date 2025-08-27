@@ -3,8 +3,8 @@
 
 # See https://docs.ansible.com/ansible/latest/dev_guide/collections_galaxy_meta.html
 
-namespace: "verity"
-name: "api"
+namespace: "be_networks"
+name: "Verity"
 version: 1.0.0
 readme: README.md
 authors:
@@ -22,7 +22,7 @@ dependencies:
 
 repository: https://github.com/BE-Network/verity-ansible
 documentation: https://docs.be-net.com/latest/
-homepage: http://example.com
+homepage: https://be-net.com
 issues: http://example.com/issue/tracker
 
 # A list of file glob-like patterns used to filter any files or directories that should not be included in the build
