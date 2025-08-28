@@ -11,7 +11,8 @@ Some modules and plugins require external libraries. Please check the
 requirements for each plugin or module you use in the documentation to find out
 which requirements are needed.
 
-This collection is designed to work in conjunction with Verity 6.5 and greater.
+> [!NOTE]
+> This collection is designed to work in conjunction with Verity 6.5 and greater.
 
 ## Included content
 
