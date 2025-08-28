@@ -1,5 +1,5 @@
 ---
-name: Release verity.api
+name: Release be_networks.verity
 
 on: # yamllint disable-line rule:truthy
   release:

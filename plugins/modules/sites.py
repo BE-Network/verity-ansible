@@ -7,7 +7,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -339,7 +339,7 @@ short_description: Manage Sites via Verity API
 '''
 
 EXAMPLES = r'''- name: Create Site
-  verity.api.sites:
+  be_networks.verity.sites:
     action: create
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -394,7 +394,7 @@ EXAMPLES = r'''- name: Create Site
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Edit Site
-  verity.api.sites:
+  be_networks.verity.sites:
     action: update
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -449,7 +449,7 @@ EXAMPLES = r'''- name: Create Site
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Delete Site
-  verity.api.sites:
+  be_networks.verity.sites:
     action: delete
     base_url: '{{ auth_result.base_url }}'
     params:

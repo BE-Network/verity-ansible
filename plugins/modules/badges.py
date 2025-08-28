@@ -7,7 +7,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -65,7 +65,7 @@ short_description: Manage Badges via Verity API
 '''
 
 EXAMPLES = r'''- name: Create Badge
-  verity.api.badges:
+  be_networks.verity.badges:
     action: create
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -78,7 +78,7 @@ EXAMPLES = r'''- name: Create Badge
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Edit Badge
-  verity.api.badges:
+  be_networks.verity.badges:
     action: update
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -91,7 +91,7 @@ EXAMPLES = r'''- name: Create Badge
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Delete Badge
-  verity.api.badges:
+  be_networks.verity.badges:
     action: delete
     base_url: '{{ auth_result.base_url }}'
     params:

@@ -7,7 +7,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -62,7 +62,7 @@ short_description: Manage Pods via Verity API
 '''
 
 EXAMPLES = r'''- name: Create Pod
-  verity.api.pods:
+  be_networks.verity.pods:
     action: create
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -74,7 +74,7 @@ EXAMPLES = r'''- name: Create Pod
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Edit Pod
-  verity.api.pods:
+  be_networks.verity.pods:
     action: update
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -86,7 +86,7 @@ EXAMPLES = r'''- name: Create Pod
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Delete Pod
-  verity.api.pods:
+  be_networks.verity.pods:
     action: delete
     base_url: '{{ auth_result.base_url }}'
     params:

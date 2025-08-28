@@ -1,5 +1,5 @@
 ---
-# argument spec file for verity.api.run
+# argument spec file for be_networks.verity.run
 
 argument_specs:
   main:

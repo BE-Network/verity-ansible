@@ -7,7 +7,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -117,7 +117,7 @@ short_description: Manage IPv4 Prefix Lists via Verity API
 '''
 
 EXAMPLES = r'''- name: Create IPv4 Prefix List
-  verity.api.ipv4prefixlists:
+  be_networks.verity.ipv4prefixlists:
     action: create
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -138,7 +138,7 @@ EXAMPLES = r'''- name: Create IPv4 Prefix List
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Edit IPv4 Prefix List
-  verity.api.ipv4prefixlists:
+  be_networks.verity.ipv4prefixlists:
     action: update
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -159,7 +159,7 @@ EXAMPLES = r'''- name: Create IPv4 Prefix List
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Delete IPv4 Prefix List
-  verity.api.ipv4prefixlists:
+  be_networks.verity.ipv4prefixlists:
     action: delete
     base_url: '{{ auth_result.base_url }}'
     params:

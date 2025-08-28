@@ -7,7 +7,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -139,7 +139,7 @@ short_description: Manage Device Settings via Verity API
 '''
 
 EXAMPLES = r'''- name: Create Device Setting
-  verity.api.devicesettings:
+  be_networks.verity.devicesettings:
     action: create
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -162,7 +162,7 @@ EXAMPLES = r'''- name: Create Device Setting
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Edit Device Setting
-  verity.api.devicesettings:
+  be_networks.verity.devicesettings:
     action: update
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -185,7 +185,7 @@ EXAMPLES = r'''- name: Create Device Setting
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Delete Device Setting
-  verity.api.devicesettings:
+  be_networks.verity.devicesettings:
     action: delete
     base_url: '{{ auth_result.base_url }}'
     params:

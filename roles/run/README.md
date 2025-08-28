@@ -1,4 +1,4 @@
-verity.api run Role
+be_networks.verity run Role
 ========================
 
 A brief description of the role goes here.
@@ -27,20 +27,20 @@ Including an example of how to use your role (for instance, with variables passe
 - name: Execute tasks on servers
   hosts: servers
   roles:
-    - role: verity.api.run
+    - role: be_networks.verity.run
       run_x: 42
 ```
 
 Another way to consume this role would be:
 
 ```yaml
-- name: Initialize the run role from verity.api
+- name: Initialize the run role from be_networks.verity
   hosts: servers
   gather_facts: false
   tasks:
     - name: Trigger invocation of run role
       ansible.builtin.include_role:
-        name: verity.api.run
+        name: be_networks.verity.run
       vars:
         run_x: 42
 ```

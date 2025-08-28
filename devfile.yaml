@@ -1,6 +1,6 @@
 schemaVersion: 2.2.2
 metadata:
-  name: verity.api-4b0075f6
+  name: be_networks.verity-4b0075f6
 components:
   - name: tooling-container
     container:

@@ -1,7 +1,7 @@
 ---
 - name: Test the Hello World filter plugin
   ansible.builtin.set_fact:
-    msg: "{{ 'ansible-creator' | verity.api.sample_filter }}"
+    msg: "{{ 'ansible-creator' | be_networks.verity.sample_filter }}"
 
 - name: Assert that the filter worked
   ansible.builtin.assert:

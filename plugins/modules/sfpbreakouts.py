@@ -7,7 +7,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -140,7 +140,7 @@ short_description: Manage SFP Breakouts via Verity API
 '''
 
 EXAMPLES = r'''- name: Create SFP Breakout
-  verity.api.sfpbreakouts:
+  be_networks.verity.sfpbreakouts:
     action: create
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -158,7 +158,7 @@ EXAMPLES = r'''- name: Create SFP Breakout
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Edit SFP Breakout
-  verity.api.sfpbreakouts:
+  be_networks.verity.sfpbreakouts:
     action: update
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -176,7 +176,7 @@ EXAMPLES = r'''- name: Create SFP Breakout
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Delete SFP Breakout
-  verity.api.sfpbreakouts:
+  be_networks.verity.sfpbreakouts:
     action: delete
     base_url: '{{ auth_result.base_url }}'
     params:

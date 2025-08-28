@@ -1,5 +1,5 @@
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_api import authenticate
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_api import authenticate
 
 
 DOCUMENTATION = r'''author:
@@ -28,7 +28,7 @@ short_description: Authenticate with the Verity API
 '''
 
 EXAMPLES = r'''- name: Authenticate once
-  verity.api.verity_auth:
+  be_networks.verity.verity_auth:
     base_url: "https://vnc-address.com"
     username: "admin"
     password: "******"

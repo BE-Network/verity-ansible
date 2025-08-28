@@ -7,7 +7,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -208,7 +208,7 @@ short_description: Manage Bundles via Verity API
 '''
 
 EXAMPLES = r'''- name: Create Bundle
-  verity.api.bundles:
+  be_networks.verity.bundles:
     action: create
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -243,7 +243,7 @@ EXAMPLES = r'''- name: Create Bundle
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Edit Bundle
-  verity.api.bundles:
+  be_networks.verity.bundles:
     action: update
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -278,7 +278,7 @@ EXAMPLES = r'''- name: Create Bundle
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Delete Bundle
-  verity.api.bundles:
+  be_networks.verity.bundles:
     action: delete
     base_url: '{{ auth_result.base_url }}'
     params:

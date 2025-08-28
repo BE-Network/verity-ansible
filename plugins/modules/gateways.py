@@ -7,7 +7,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -341,7 +341,7 @@ short_description: Manage Gateways via Verity API
 '''
 
 EXAMPLES = r'''- name: Create Gateway
-  verity.api.gateways:
+  be_networks.verity.gateways:
     action: create
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -394,7 +394,7 @@ EXAMPLES = r'''- name: Create Gateway
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Edit Gateway
-  verity.api.gateways:
+  be_networks.verity.gateways:
     action: update
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -447,7 +447,7 @@ EXAMPLES = r'''- name: Create Gateway
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Delete Gateway
-  verity.api.gateways:
+  be_networks.verity.gateways:
     action: delete
     base_url: '{{ auth_result.base_url }}'
     params:

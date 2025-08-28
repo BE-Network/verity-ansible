@@ -1,6 +1,6 @@
 galaxy_info:
   author: foo
-  description: verity.api run Role
+  description: be_networks.verity run Role
   company: verity
 
   # If the issue tracker for your role is not on github, uncomment the

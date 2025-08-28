@@ -1,5 +1,5 @@
 ---
-# tasks file for verity.api.run
+# tasks file for be_networks.verity.run
 
 # task example for debugging a value
 - name: Debug the value of my_variable

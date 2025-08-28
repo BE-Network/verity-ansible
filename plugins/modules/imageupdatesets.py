@@ -7,7 +7,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.verity.api.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -335,7 +335,7 @@ short_description: Manage Image Update Sets via Verity API
 '''
 
 EXAMPLES = r'''- name: Create Image Update Set
-  verity.api.imageupdatesets:
+  be_networks.verity.imageupdatesets:
     action: create
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -387,7 +387,7 @@ EXAMPLES = r'''- name: Create Image Update Set
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Edit Image Update Set
-  verity.api.imageupdatesets:
+  be_networks.verity.imageupdatesets:
     action: update
     base_url: '{{ auth_result.base_url }}'
     data:
@@ -439,7 +439,7 @@ EXAMPLES = r'''- name: Create Image Update Set
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
 - name: Delete Image Update Set
-  verity.api.imageupdatesets:
+  be_networks.verity.imageupdatesets:
     action: delete
     base_url: '{{ auth_result.base_url }}'
     params:

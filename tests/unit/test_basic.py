@@ -1,4 +1,4 @@
-"""Unit tests for verity.api."""
+"""Unit tests for be_networks.verity."""
 
 
 def test_basic() -> None:
