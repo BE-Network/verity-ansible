@@ -11,6 +11,8 @@ Some modules and plugins require external libraries. Please check the
 requirements for each plugin or module you use in the documentation to find out
 which requirements are needed.
 
+This collection is designed to work in conjunction with Verity 6.5 and greater.
+
 ## Included content
 
 <!--start collection content-->
@@ -55,21 +57,6 @@ for more details.
 See the
 [changelog](https://github.com/ansible-collections/verity.api/tree/main/CHANGELOG.rst).
 
-## Roadmap
-
-<!-- Optional. Include the roadmap for this collection, and the proposed release/versioning strategy so users can anticipate the upgrade/update cycle. -->
-
-## More information
-
-<!-- List out where the user can find additional information, such as working group meeting times, slack/matrix channels, or documentation for the product this collection automates. At a minimum, link to: -->
-
-- [Ansible collection development forum](https://forum.ansible.com/c/project/collection-development/27)
-- [Ansible User guide](https://docs.ansible.com/ansible/devel/user_guide/index.html)
-- [Ansible Developer guide](https://docs.ansible.com/ansible/devel/dev_guide/index.html)
-- [Ansible Collections Checklist](https://docs.ansible.com/ansible/devel/community/collection_contributors/collection_requirements.html)
-- [Ansible Community code of conduct](https://docs.ansible.com/ansible/devel/community/code_of_conduct.html)
-- [The Bullhorn (the Ansible Contributor newsletter)](https://docs.ansible.com/ansible/devel/community/communication.html#the-bullhorn)
-- [News for Maintainers](https://forum.ansible.com/tag/news-for-maintainers)
 
 ## Licensing
 
