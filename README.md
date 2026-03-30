@@ -2,6 +2,17 @@
 
 This repository contains the `be_networks.verity` Ansible Collection, which is meant to work with Verity 6.5 and greater.
 
+## Security Toolchain
+
+This repository uses a standardized security baseline implemented via GitHub Actions workflows:
+
+- `.github/workflows/security-baseline.yml`
+- `.github/workflows/codeql.yml`
+
+Central standard:
+
+- https://github.com/BE-Network/verity-monitoring/blob/main/SECURITY_TOOLCHAIN_STANDARD.md
+
 <!--start requires_ansible-->
 <!--end requires_ansible-->
 
