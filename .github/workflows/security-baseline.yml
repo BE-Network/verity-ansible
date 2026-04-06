@@ -93,7 +93,7 @@ jobs:
             --output=osv-results.sarif
             .
 
-- name: Fail on OSV High/Critical only
+      - name: Fail on OSV High/Critical only
         if: always() && hashFiles('osv-results.sarif') != ''
         run: |
           python3 - << 'PY'
