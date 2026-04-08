@@ -119,7 +119,7 @@ EXAMPLES = r'''
         TestIPv6 Prefix List:
           enable: true
           lists:
-          - enable: true
+            - enable: true
             greater_than_equal_value: 1
             ipv6_prefix: ipv6_prefix
             less_than_equal_value: 1
@@ -139,7 +139,7 @@ EXAMPLES = r'''
         TestIPv6 Prefix List:
           enable: true
           lists:
-          - enable: true
+            - enable: true
             greater_than_equal_value: 1
             ipv6_prefix: ipv6_prefix
             less_than_equal_value: 1

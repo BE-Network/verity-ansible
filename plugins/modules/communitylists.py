@@ -145,7 +145,7 @@ EXAMPLES = r'''
           any_all: any
           enable: true
           lists:
-          - community_string_expanded_expression: community_string_expanded_expression
+            - community_string_expanded_expression: community_string_expanded_expression
             enable: true
             index: 1
             mode: no_advertise
@@ -167,7 +167,7 @@ EXAMPLES = r'''
           any_all: any
           enable: true
           lists:
-          - community_string_expanded_expression: community_string_expanded_expression
+            - community_string_expanded_expression: community_string_expanded_expression
             enable: true
             index: 1
             mode: no_advertise

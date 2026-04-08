@@ -384,7 +384,7 @@ EXAMPLES = r'''
           replace_as: true
           source_ip_address: source_ip_address
           static_routes:
-          - ad_value: 1
+            - ad_value: 1
             enable: true
             index: 1
             ipv4_route_prefix: ipv4_route_prefix
@@ -437,7 +437,7 @@ EXAMPLES = r'''
           replace_as: true
           source_ip_address: source_ip_address
           static_routes:
-          - ad_value: 1
+            - ad_value: 1
             enable: true
             index: 1
             ipv4_route_prefix: ipv4_route_prefix

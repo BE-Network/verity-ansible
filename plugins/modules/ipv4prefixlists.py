@@ -126,7 +126,7 @@ EXAMPLES = r'''
         TestIPv4 Prefix List:
           enable: true
           lists:
-          - enable: true
+            - enable: true
             greater_than_equal_value: 1
             index: 1
             ipv4_prefix: ipv4_prefix
@@ -147,7 +147,7 @@ EXAMPLES = r'''
         TestIPv4 Prefix List:
           enable: true
           lists:
-          - enable: true
+            - enable: true
             greater_than_equal_value: 1
             index: 1
             ipv4_prefix: ipv4_prefix

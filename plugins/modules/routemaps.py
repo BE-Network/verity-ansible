@@ -114,7 +114,7 @@ EXAMPLES = r'''
           object_properties:
             notes: notes
           route_map_clauses:
-          - enable: true
+            - enable: true
             index: 1
             route_map_clause: route_map_clause
             route_map_clause_ref_type_: route_map_clause
@@ -133,7 +133,7 @@ EXAMPLES = r'''
           object_properties:
             notes: notes
           route_map_clauses:
-          - enable: true
+            - enable: true
             index: 1
             route_map_clause: route_map_clause
             route_map_clause_ref_type_: route_map_clause

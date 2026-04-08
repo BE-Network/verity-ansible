@@ -199,22 +199,22 @@ EXAMPLES = r'''
         TestPacketBroker:
           enable: true
           ipv4_deny:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv4_filter
             index: 1
           ipv4_permit:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv4_filter
             index: 1
           ipv6_deny:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv6_filter
             index: 1
           ipv6_permit:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv6_filter
             index: 1
@@ -231,22 +231,22 @@ EXAMPLES = r'''
         TestPacketBroker:
           enable: true
           ipv4_deny:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv4_filter
             index: 1
           ipv4_permit:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv4_filter
             index: 1
           ipv6_deny:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv6_filter
             index: 1
           ipv6_permit:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv6_filter
             index: 1

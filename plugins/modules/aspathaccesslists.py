@@ -112,7 +112,7 @@ EXAMPLES = r'''
         TestAS Path Access List:
           enable: true
           lists:
-          - enable: true
+            - enable: true
             index: 1
             regular_expression: regular_expression
           name: name
@@ -131,7 +131,7 @@ EXAMPLES = r'''
         TestAS Path Access List:
           enable: true
           lists:
-          - enable: true
+            - enable: true
             index: 1
             regular_expression: regular_expression
           name: name

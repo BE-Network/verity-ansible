@@ -141,7 +141,7 @@ EXAMPLES = r'''
           any_all: any
           enable: true
           lists:
-          - enable: true
+            - enable: true
             index: 1
             mode: route
             route_target_expanded_expression: route_target_expanded_expression
@@ -163,7 +163,7 @@ EXAMPLES = r'''
           any_all: any
           enable: true
           lists:
-          - enable: true
+            - enable: true
             index: 1
             mode: route
             route_target_expanded_expression: route_target_expanded_expression

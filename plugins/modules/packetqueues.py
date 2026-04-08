@@ -141,10 +141,10 @@ EXAMPLES = r'''
             group: group
             isdefault: true
           pbit:
-          - index: 1
+            - index: 1
             packet_queue_for_p_bit: 1
           queue:
-          - bandwidth_for_queue: 1
+            - bandwidth_for_queue: 1
             index: 1
             scheduler_type: ''
             scheduler_weight: 1
@@ -164,10 +164,10 @@ EXAMPLES = r'''
             group: group
             isdefault: true
           pbit:
-          - index: 1
+            - index: 1
             packet_queue_for_p_bit: 1
           queue:
-          - bandwidth_for_queue: 1
+            - bandwidth_for_queue: 1
             index: 1
             scheduler_type: ''
             scheduler_weight: 1

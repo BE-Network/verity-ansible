@@ -167,19 +167,19 @@ EXAMPLES = r'''
         TestPort ACL:
           enable: true
           ipv4_deny:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv4_filter
           ipv4_permit:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv4_filter
           ipv6_deny:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv6_filter
           ipv6_permit:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv6_filter
           name: name
@@ -195,19 +195,19 @@ EXAMPLES = r'''
         TestPort ACL:
           enable: true
           ipv4_deny:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv4_filter
           ipv4_permit:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv4_filter
           ipv6_deny:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv6_filter
           ipv6_permit:
-          - enable: true
+            - enable: true
             filter: filter
             filter_ref_type_: ipv6_filter
           name: name

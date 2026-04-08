@@ -358,7 +358,7 @@ EXAMPLES = r'''
           evpn_multihoming_startup_delay: 1
           force_spanning_tree_on_fabric_ports: true
           islands:
-          - index: 1
+            - index: 1
             toi_switchpoint: toi_switchpoint
             toi_switchpoint_ref_type_: switchpoint
           leaf_bgp_advertisement_interval: 1
@@ -371,10 +371,10 @@ EXAMPLES = r'''
           name: name
           object_properties:
             system_graphs:
-            - graph_num_data: graph_num_data
+              - graph_num_data: graph_num_data
               index: 1
           pairs:
-          - index: 1
+            - index: 1
             is_whitebox_pair: true
             lag_group: lag_group
             lag_group_ref_type_: lag
@@ -413,7 +413,7 @@ EXAMPLES = r'''
           evpn_multihoming_startup_delay: 1
           force_spanning_tree_on_fabric_ports: true
           islands:
-          - index: 1
+            - index: 1
             toi_switchpoint: toi_switchpoint
             toi_switchpoint_ref_type_: switchpoint
           leaf_bgp_advertisement_interval: 1
@@ -426,10 +426,10 @@ EXAMPLES = r'''
           name: name
           object_properties:
             system_graphs:
-            - graph_num_data: graph_num_data
+              - graph_num_data: graph_num_data
               index: 1
           pairs:
-          - index: 1
+            - index: 1
             is_whitebox_pair: true
             lag_group: lag_group
             lag_group_ref_type_: lag

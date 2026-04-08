@@ -242,7 +242,7 @@ EXAMPLES = r'''
           route_target_export: route_target_export
           route_target_import: route_target_import
           route_tenants:
-          - enable: true
+            - enable: true
             index: 1
             tenant: tenant
           vrf_name: vrf_name
@@ -276,7 +276,7 @@ EXAMPLES = r'''
           route_target_export: route_target_export
           route_target_import: route_target_import
           route_tenants:
-          - enable: true
+            - enable: true
             index: 1
             tenant: tenant
           vrf_name: vrf_name

@@ -350,7 +350,7 @@ EXAMPLES = r'''
             firmware_count: 1
           provisioning_on_summary: true
           section:
-          - endpoint_set_num_name: endpoint_set_num_name
+            - endpoint_set_num_name: endpoint_set_num_name
             endpoint_set_num_on_summary: true
             endpoint_set_num_subrule_1_inverted: true
             endpoint_set_num_subrule_1_reference_path: endpoint_set_num_subrule_1_reference_path
@@ -371,13 +371,13 @@ EXAMPLES = r'''
             endpoint_set_num_target_upgrade_version_time: endpoint_set_num_target_upgrade_version_time
             endpoint_set_num_unique_identifier: endpoint_set_num_unique_identifier
           section_else:
-          - endpoint_set_for_all_others_target_upgrade_version: 1.8.1.5
+            - endpoint_set_for_all_others_target_upgrade_version: 1.8.1.5
             endpoint_set_for_all_others_target_upgrade_version_time: endpoint_set_for_all_others_target_upgrade_version_time
             endpoint_set_for_all_others_unique_identifier: endpoint_set_for_all_others_unique_identifier
             endpoint_set_num_name: endpoint_set_num_name
             endpoint_set_num_on_summary: true
           section_pointless:
-          - endpoint_set_for_endpointless_target_upgrade_version: 1.8.1.5
+            - endpoint_set_for_endpointless_target_upgrade_version: 1.8.1.5
             endpoint_set_for_endpointless_target_upgrade_version_time: endpoint_set_for_endpointless_target_upgrade_version_time
             endpoint_set_for_endpointless_unique_identifier: endpoint_set_for_endpointless_unique_identifier
             endpoint_set_num_name: endpoint_set_num_name
@@ -402,7 +402,7 @@ EXAMPLES = r'''
             firmware_count: 1
           provisioning_on_summary: true
           section:
-          - endpoint_set_num_name: endpoint_set_num_name
+            - endpoint_set_num_name: endpoint_set_num_name
             endpoint_set_num_on_summary: true
             endpoint_set_num_subrule_1_inverted: true
             endpoint_set_num_subrule_1_reference_path: endpoint_set_num_subrule_1_reference_path
@@ -423,13 +423,13 @@ EXAMPLES = r'''
             endpoint_set_num_target_upgrade_version_time: endpoint_set_num_target_upgrade_version_time
             endpoint_set_num_unique_identifier: endpoint_set_num_unique_identifier
           section_else:
-          - endpoint_set_for_all_others_target_upgrade_version: 1.8.1.5
+            - endpoint_set_for_all_others_target_upgrade_version: 1.8.1.5
             endpoint_set_for_all_others_target_upgrade_version_time: endpoint_set_for_all_others_target_upgrade_version_time
             endpoint_set_for_all_others_unique_identifier: endpoint_set_for_all_others_unique_identifier
             endpoint_set_num_name: endpoint_set_num_name
             endpoint_set_num_on_summary: true
           section_pointless:
-          - endpoint_set_for_endpointless_target_upgrade_version: 1.8.1.5
+            - endpoint_set_for_endpointless_target_upgrade_version: 1.8.1.5
             endpoint_set_for_endpointless_target_upgrade_version_time: endpoint_set_for_endpointless_target_upgrade_version_time
             endpoint_set_for_endpointless_unique_identifier: endpoint_set_for_endpointless_unique_identifier
             endpoint_set_num_name: endpoint_set_num_name

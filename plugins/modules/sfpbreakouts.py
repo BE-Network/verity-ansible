@@ -148,7 +148,7 @@ EXAMPLES = r'''
       sfp_breakouts:
         TestSFP Breakout:
           breakout:
-          - breakout: 8x1G
+            - breakout: 8x1G
             enable: true
             part_number: part_number
             vendor: vendor
@@ -166,7 +166,7 @@ EXAMPLES = r'''
       sfp_breakouts:
         TestSFP Breakout:
           breakout:
-          - breakout: 8x1G
+            - breakout: 8x1G
             enable: true
             part_number: part_number
             vendor: vendor

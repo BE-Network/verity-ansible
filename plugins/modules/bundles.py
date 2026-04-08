@@ -219,7 +219,7 @@ EXAMPLES = r'''
           device_settings: device_settings
           device_settings_ref_type_: eth_device_profiles
           eth_port_paths:
-          - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
+            - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
             eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
             eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
             eth_port_num_eth_port_settings_ref_type_: eth_port_settings
@@ -231,10 +231,10 @@ EXAMPLES = r'''
           object_properties:
             is_for_switch: true
           rg_services:
-          - index: 1
+            - index: 1
             row_ip_mask: row_ip_mask
           user_services:
-          - index: 1
+            - index: 1
             row_app_cli_commands: row_app_cli_commands
             row_app_connected_service: row_app_connected_service
             row_app_connected_service_ref_type_: service
@@ -254,7 +254,7 @@ EXAMPLES = r'''
           device_settings: device_settings
           device_settings_ref_type_: eth_device_profiles
           eth_port_paths:
-          - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
+            - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
             eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
             eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
             eth_port_num_eth_port_settings_ref_type_: eth_port_settings
@@ -266,10 +266,10 @@ EXAMPLES = r'''
           object_properties:
             is_for_switch: true
           rg_services:
-          - index: 1
+            - index: 1
             row_ip_mask: row_ip_mask
           user_services:
-          - index: 1
+            - index: 1
             row_app_cli_commands: row_app_cli_commands
             row_app_connected_service: row_app_connected_service
             row_app_connected_service_ref_type_: service

@@ -143,7 +143,7 @@ EXAMPLES = r'''
             group: group
             port_monitoring: critical
           services:
-          - index: 1
+            - index: 1
             row_num_enable: true
             row_num_external_vlan: 1
             row_num_service: row_num_service
@@ -165,7 +165,7 @@ EXAMPLES = r'''
             group: group
             port_monitoring: critical
           services:
-          - index: 1
+            - index: 1
             row_num_enable: true
             row_num_external_vlan: 1
             row_num_service: row_num_service

@@ -428,13 +428,13 @@ EXAMPLES = r'''
       switchpoint:
         TestSwitchpoint:
           badges:
-          - badge: badge
+            - badge: badge
             badge_ref_type_: badge
             index: 1
           bgp_as_number: 1
           bgp_as_number_auto_assigned_: true
           children:
-          - child_num_device: child_num_device
+            - child_num_device: child_num_device
             child_num_endpoint: child_num_endpoint
             child_num_endpoint_ref_type_: switchpoint
             index: 1
@@ -443,14 +443,14 @@ EXAMPLES = r'''
           device_serial_number: device_serial_number
           disabled_ports: disabled_ports
           eths:
-          - breakout: 8x1G
+            - breakout: 8x1G
             index: 1
           locked: true
           name: name
           object_properties:
             aggregate: true
             eths:
-            - eth_num_icon: eth_num_icon
+              - eth_num_icon: eth_num_icon
               eth_num_label: eth_num_label
               index: 1
             expected_parent_endpoint: expected_parent_endpoint
@@ -469,7 +469,7 @@ EXAMPLES = r'''
           switch_vtep_id_ip_mask: switch_vtep_id_ip_mask
           switch_vtep_id_ip_mask_auto_assigned_: true
           traffic_mirrors:
-          - index: 1
+            - index: 1
             traffic_mirror_num_destination_port: traffic_mirror_num_destination_port
             traffic_mirror_num_enable: true
             traffic_mirror_num_inbound_traffic: true
@@ -488,13 +488,13 @@ EXAMPLES = r'''
       switchpoint:
         TestSwitchpoint:
           badges:
-          - badge: badge
+            - badge: badge
             badge_ref_type_: badge
             index: 1
           bgp_as_number: 1
           bgp_as_number_auto_assigned_: true
           children:
-          - child_num_device: child_num_device
+            - child_num_device: child_num_device
             child_num_endpoint: child_num_endpoint
             child_num_endpoint_ref_type_: switchpoint
             index: 1
@@ -503,14 +503,14 @@ EXAMPLES = r'''
           device_serial_number: device_serial_number
           disabled_ports: disabled_ports
           eths:
-          - breakout: 8x1G
+            - breakout: 8x1G
             index: 1
           locked: true
           name: name
           object_properties:
             aggregate: true
             eths:
-            - eth_num_icon: eth_num_icon
+              - eth_num_icon: eth_num_icon
               eth_num_label: eth_num_label
               index: 1
             expected_parent_endpoint: expected_parent_endpoint
@@ -529,7 +529,7 @@ EXAMPLES = r'''
           switch_vtep_id_ip_mask: switch_vtep_id_ip_mask
           switch_vtep_id_ip_mask_auto_assigned_: true
           traffic_mirrors:
-          - index: 1
+            - index: 1
             traffic_mirror_num_destination_port: traffic_mirror_num_destination_port
             traffic_mirror_num_enable: true
             traffic_mirror_num_inbound_traffic: true

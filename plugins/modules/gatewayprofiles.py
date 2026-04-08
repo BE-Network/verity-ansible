@@ -137,7 +137,7 @@ EXAMPLES = r'''
         TestGateway Profile:
           enable: true
           external_gateways:
-          - enable: true
+            - enable: true
             gateway: gateway
             gateway_ref_type_: gateway
             index: 1
@@ -159,7 +159,7 @@ EXAMPLES = r'''
         TestGateway Profile:
           enable: true
           external_gateways:
-          - enable: true
+            - enable: true
             gateway: gateway
             gateway_ref_type_: gateway
             index: 1
