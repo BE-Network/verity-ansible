@@ -3,9 +3,9 @@
 # License: GPL-3.0-or-later
 # pylint: disable=E0401
 
-from __future__ import absolute_import, annotations, division, print_function
+from __future__ import absolute_import, division, print_function
 
-__metaclass__ = type  # pylint: disable=C0103
+__metaclass__ = type
 
 from typing import TYPE_CHECKING
 from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (  # type: ignore
