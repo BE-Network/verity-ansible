@@ -1,0 +1,4 @@
+plugins/action/sample_action.py action-plugin-docs
+plugins/action/sample_action.py future-import-boilerplate
+plugins/action/sample_action.py metaclass-boilerplate
+
