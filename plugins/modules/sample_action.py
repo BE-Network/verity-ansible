@@ -27,7 +27,7 @@ options:
     type: str
     required: false
 author:
-  - BE Networks
+  - BE Networks (@be_networks)
 '''
 
 EXAMPLES = r'''
@@ -50,8 +50,8 @@ def main():
 
     module = AnsibleModule(
         argument_spec=dict(
-            msg=dict(type='str', required=False, default=''),
-            prefix=dict(type='str', required=False, default=''),
+            msg=dict(type='str', required=False),
+            prefix=dict(type='str', required=False),
         ),
         supports_check_mode=True,
     )
