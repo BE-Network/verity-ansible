@@ -61,7 +61,8 @@ options:
 short_description: Manage Pods via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Pod
+EXAMPLES = r'''
+- name: Create Pod
   be_networks.verity.pods:
     action: create
     base_url: '{{ auth_result.base_url }}'

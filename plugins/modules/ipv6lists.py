@@ -67,7 +67,8 @@ options:
 short_description: Manage IPv6 List Filters via Verity API
 '''
 
-EXAMPLES = r'''- name: Create IPv6 List Filter
+EXAMPLES = r'''
+- name: Create IPv6 List Filter
   be_networks.verity.ipv6lists:
     action: create
     base_url: '{{ auth_result.base_url }}'

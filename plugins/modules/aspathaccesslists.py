@@ -102,7 +102,8 @@ options:
 short_description: Manage AS Path Access Lists via Verity API
 '''
 
-EXAMPLES = r'''- name: Create AS Path Access List
+EXAMPLES = r'''
+- name: Create AS Path Access List
   be_networks.verity.aspathaccesslists:
     action: create
     base_url: '{{ auth_result.base_url }}'

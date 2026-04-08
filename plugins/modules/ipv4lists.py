@@ -67,7 +67,8 @@ options:
 short_description: Manage IPv4 List Filters via Verity API
 '''
 
-EXAMPLES = r'''- name: Create IPv4 List Filter
+EXAMPLES = r'''
+- name: Create IPv4 List Filter
   be_networks.verity.ipv4lists:
     action: create
     base_url: '{{ auth_result.base_url }}'

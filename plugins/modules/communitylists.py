@@ -134,7 +134,8 @@ options:
 short_description: Manage Community Lists via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Community List
+EXAMPLES = r'''
+- name: Create Community List
   be_networks.verity.communitylists:
     action: create
     base_url: '{{ auth_result.base_url }}'

@@ -101,7 +101,8 @@ options:
 short_description: Manage Route Maps via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Route Map
+EXAMPLES = r'''
+- name: Create Route Map
   be_networks.verity.routemaps:
     action: create
     base_url: '{{ auth_result.base_url }}'

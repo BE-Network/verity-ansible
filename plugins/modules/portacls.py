@@ -157,7 +157,8 @@ options:
 short_description: Manage Port ACLs via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Port ACL
+EXAMPLES = r'''
+- name: Create Port ACL
   be_networks.verity.portacls:
     action: create
     base_url: '{{ auth_result.base_url }}'

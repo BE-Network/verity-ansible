@@ -291,7 +291,8 @@ options:
 short_description: Manage Route Map Clauses via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Route Map Clause
+EXAMPLES = r'''
+- name: Create Route Map Clause
   be_networks.verity.routemapclauses:
     action: create
     base_url: '{{ auth_result.base_url }}'

@@ -419,7 +419,8 @@ options:
 short_description: Manage Switchpoints via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Switchpoint
+EXAMPLES = r'''
+- name: Create Switchpoint
   be_networks.verity.switchpoints:
     action: create
     base_url: '{{ auth_result.base_url }}'

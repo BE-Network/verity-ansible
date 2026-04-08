@@ -304,7 +304,8 @@ options:
 short_description: Manage Device Controllers via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Device Controller
+EXAMPLES = r'''
+- name: Create Device Controller
   be_networks.verity.devicecontrollers:
     action: create
     base_url: '{{ auth_result.base_url }}'

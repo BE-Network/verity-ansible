@@ -129,7 +129,8 @@ options:
 short_description: Manage Eth-Port Profiles via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Eth-Port Profile
+EXAMPLES = r'''
+- name: Create Eth-Port Profile
   be_networks.verity.ethportprofiles:
     action: create
     base_url: '{{ auth_result.base_url }}'

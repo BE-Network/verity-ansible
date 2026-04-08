@@ -158,7 +158,8 @@ options:
 short_description: Manage ACLs via Verity API
 '''
 
-EXAMPLES = r'''- name: Create ACL
+EXAMPLES = r'''
+- name: Create ACL
   be_networks.verity.acls:
     action: create
     base_url: '{{ auth_result.base_url }}'

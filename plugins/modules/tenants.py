@@ -215,7 +215,8 @@ options:
 short_description: Manage Tenants via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Tenant
+EXAMPLES = r'''
+- name: Create Tenant
   be_networks.verity.tenants:
     action: create
     base_url: '{{ auth_result.base_url }}'

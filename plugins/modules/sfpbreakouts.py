@@ -139,7 +139,8 @@ options:
 short_description: Manage SFP Breakouts via Verity API
 '''
 
-EXAMPLES = r'''- name: Create SFP Breakout
+EXAMPLES = r'''
+- name: Create SFP Breakout
   be_networks.verity.sfpbreakouts:
     action: create
     base_url: '{{ auth_result.base_url }}'

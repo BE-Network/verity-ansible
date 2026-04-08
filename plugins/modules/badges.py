@@ -64,7 +64,8 @@ options:
 short_description: Manage Badges via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Badge
+EXAMPLES = r'''
+- name: Create Badge
   be_networks.verity.badges:
     action: create
     base_url: '{{ auth_result.base_url }}'

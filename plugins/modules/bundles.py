@@ -207,7 +207,8 @@ options:
 short_description: Manage Bundles via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Bundle
+EXAMPLES = r'''
+- name: Create Bundle
   be_networks.verity.bundles:
     action: create
     base_url: '{{ auth_result.base_url }}'

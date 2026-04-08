@@ -138,7 +138,8 @@ options:
 short_description: Manage Device Settings via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Device Setting
+EXAMPLES = r'''
+- name: Create Device Setting
   be_networks.verity.devicesettings:
     action: create
     base_url: '{{ auth_result.base_url }}'

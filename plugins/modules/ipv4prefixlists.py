@@ -116,7 +116,8 @@ options:
 short_description: Manage IPv4 Prefix Lists via Verity API
 '''
 
-EXAMPLES = r'''- name: Create IPv4 Prefix List
+EXAMPLES = r'''
+- name: Create IPv4 Prefix List
   be_networks.verity.ipv4prefixlists:
     action: create
     base_url: '{{ auth_result.base_url }}'

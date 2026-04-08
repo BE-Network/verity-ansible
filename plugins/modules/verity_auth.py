@@ -27,7 +27,8 @@ options:
 short_description: Authenticate with the Verity API
 '''
 
-EXAMPLES = r'''- name: Authenticate once
+EXAMPLES = r'''
+- name: Authenticate once
   be_networks.verity.verity_auth:
     base_url: "https://vnc-address.com"
     username: "admin"

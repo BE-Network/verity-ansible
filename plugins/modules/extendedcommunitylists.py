@@ -130,7 +130,8 @@ options:
 short_description: Manage Extended Community Lists via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Extended Community List
+EXAMPLES = r'''
+- name: Create Extended Community List
   be_networks.verity.extendedcommunitylists:
     action: create
     base_url: '{{ auth_result.base_url }}'

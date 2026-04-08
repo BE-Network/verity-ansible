@@ -189,7 +189,8 @@ options:
 short_description: Manage PacketBrokers via Verity API
 '''
 
-EXAMPLES = r'''- name: Create PacketBroker
+EXAMPLES = r'''
+- name: Create PacketBroker
   be_networks.verity.packetbroker:
     action: create
     base_url: '{{ auth_result.base_url }}'

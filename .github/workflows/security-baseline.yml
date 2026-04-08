@@ -143,10 +143,10 @@ jobs:
             for rid, sev, msg in high:
               print(f'- {rid} (CVSS {sev}): {msg}')
             sys.exit(1)
-          
+
           sys.exit(0)
           PY
-          
+
       - name: Upload OSV SARIF
         if: always() && hashFiles('osv-results.sarif') != ''
         uses: actions/upload-artifact@v6

@@ -127,7 +127,8 @@ options:
 short_description: Manage Packet Queues via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Packet Queue
+EXAMPLES = r'''
+- name: Create Packet Queue
   be_networks.verity.packetqueues:
     action: create
     base_url: '{{ auth_result.base_url }}'

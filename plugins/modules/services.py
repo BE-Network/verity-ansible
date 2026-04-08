@@ -142,7 +142,8 @@ options:
 short_description: Manage Services via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Service
+EXAMPLES = r'''
+- name: Create Service
   be_networks.verity.services:
     action: create
     base_url: '{{ auth_result.base_url }}'

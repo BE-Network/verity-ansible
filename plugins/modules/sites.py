@@ -338,7 +338,8 @@ options:
 short_description: Manage Sites via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Site
+EXAMPLES = r'''
+- name: Create Site
   be_networks.verity.sites:
     action: create
     base_url: '{{ auth_result.base_url }}'

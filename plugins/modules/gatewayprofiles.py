@@ -127,7 +127,8 @@ options:
 short_description: Manage Gateway Profiles via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Gateway Profile
+EXAMPLES = r'''
+- name: Create Gateway Profile
   be_networks.verity.gatewayprofiles:
     action: create
     base_url: '{{ auth_result.base_url }}'

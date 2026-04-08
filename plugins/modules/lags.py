@@ -140,7 +140,8 @@ options:
 short_description: Manage LAGs via Verity API
 '''
 
-EXAMPLES = r'''- name: Create LAG
+EXAMPLES = r'''
+- name: Create LAG
   be_networks.verity.lags:
     action: create
     base_url: '{{ auth_result.base_url }}'

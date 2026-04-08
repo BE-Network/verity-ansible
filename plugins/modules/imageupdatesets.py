@@ -334,7 +334,8 @@ options:
 short_description: Manage Image Update Sets via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Image Update Set
+EXAMPLES = r'''
+- name: Create Image Update Set
   be_networks.verity.imageupdatesets:
     action: create
     base_url: '{{ auth_result.base_url }}'

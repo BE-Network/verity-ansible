@@ -340,7 +340,8 @@ options:
 short_description: Manage Gateways via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Gateway
+EXAMPLES = r'''
+- name: Create Gateway
   be_networks.verity.gateways:
     action: create
     base_url: '{{ auth_result.base_url }}'
