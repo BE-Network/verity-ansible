@@ -146,9 +146,9 @@ EXAMPLES = r'''
           enable: true
           lists:
             - community_string_expanded_expression: community_string_expanded_expression
-            enable: true
-            index: 1
-            mode: no_advertise
+              enable: true
+              index: 1
+              mode: no_advertise
           name: name
           object_properties:
             notes: notes
@@ -168,9 +168,9 @@ EXAMPLES = r'''
           enable: true
           lists:
             - community_string_expanded_expression: community_string_expanded_expression
-            enable: true
-            index: 1
-            mode: no_advertise
+              enable: true
+              index: 1
+              mode: no_advertise
           name: name
           object_properties:
             notes: notes

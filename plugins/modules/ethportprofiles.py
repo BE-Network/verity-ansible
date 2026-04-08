@@ -144,10 +144,10 @@ EXAMPLES = r'''
             port_monitoring: critical
           services:
             - index: 1
-            row_num_enable: true
-            row_num_external_vlan: 1
-            row_num_service: row_num_service
-            row_num_service_ref_type_: service
+              row_num_enable: true
+              row_num_external_vlan: 1
+              row_num_service: row_num_service
+              row_num_service_ref_type_: service
           tenant_slice_managed: true
     params:
       changeset_name: changeset_name
@@ -166,10 +166,10 @@ EXAMPLES = r'''
             port_monitoring: critical
           services:
             - index: 1
-            row_num_enable: true
-            row_num_external_vlan: 1
-            row_num_service: row_num_service
-            row_num_service_ref_type_: service
+              row_num_enable: true
+              row_num_external_vlan: 1
+              row_num_service: row_num_service
+              row_num_service_ref_type_: service
           tenant_slice_managed: true
     params:
       changeset_name: changeset_name

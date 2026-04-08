@@ -385,10 +385,10 @@ EXAMPLES = r'''
           source_ip_address: source_ip_address
           static_routes:
             - ad_value: 1
-            enable: true
-            index: 1
-            ipv4_route_prefix: ipv4_route_prefix
-            next_hop_ip_address: next_hop_ip_address
+              enable: true
+              index: 1
+              ipv4_route_prefix: ipv4_route_prefix
+              next_hop_ip_address: next_hop_ip_address
           tenant: tenant
           tenant_ref_type_: tenant
     params:
@@ -438,10 +438,10 @@ EXAMPLES = r'''
           source_ip_address: source_ip_address
           static_routes:
             - ad_value: 1
-            enable: true
-            index: 1
-            ipv4_route_prefix: ipv4_route_prefix
-            next_hop_ip_address: next_hop_ip_address
+              enable: true
+              index: 1
+              ipv4_route_prefix: ipv4_route_prefix
+              next_hop_ip_address: next_hop_ip_address
           tenant: tenant
           tenant_ref_type_: tenant
     params:

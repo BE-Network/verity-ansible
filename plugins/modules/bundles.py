@@ -220,26 +220,26 @@ EXAMPLES = r'''
           device_settings_ref_type_: eth_device_profiles
           eth_port_paths:
             - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
-            eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
-            eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
-            eth_port_num_eth_port_settings_ref_type_: eth_port_settings
-            eth_port_num_gateway_profile: eth_port_num_gateway_profile
-            eth_port_num_gateway_profile_ref_type_: gateway_profile
-            index: 1
-            port_name: port_name
+              eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
+              eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
+              eth_port_num_eth_port_settings_ref_type_: eth_port_settings
+              eth_port_num_gateway_profile: eth_port_num_gateway_profile
+              eth_port_num_gateway_profile_ref_type_: gateway_profile
+              index: 1
+              port_name: port_name
           name: name
           object_properties:
             is_for_switch: true
           rg_services:
             - index: 1
-            row_ip_mask: row_ip_mask
+              row_ip_mask: row_ip_mask
           user_services:
             - index: 1
-            row_app_cli_commands: row_app_cli_commands
-            row_app_connected_service: row_app_connected_service
-            row_app_connected_service_ref_type_: service
-            row_app_enable: true
-            row_ip_mask: row_ip_mask
+              row_app_cli_commands: row_app_cli_commands
+              row_app_connected_service: row_app_connected_service
+              row_app_connected_service_ref_type_: service
+              row_app_enable: true
+              row_ip_mask: row_ip_mask
     params:
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
@@ -255,26 +255,26 @@ EXAMPLES = r'''
           device_settings_ref_type_: eth_device_profiles
           eth_port_paths:
             - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
-            eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
-            eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
-            eth_port_num_eth_port_settings_ref_type_: eth_port_settings
-            eth_port_num_gateway_profile: eth_port_num_gateway_profile
-            eth_port_num_gateway_profile_ref_type_: gateway_profile
-            index: 1
-            port_name: port_name
+              eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
+              eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
+              eth_port_num_eth_port_settings_ref_type_: eth_port_settings
+              eth_port_num_gateway_profile: eth_port_num_gateway_profile
+              eth_port_num_gateway_profile_ref_type_: gateway_profile
+              index: 1
+              port_name: port_name
           name: name
           object_properties:
             is_for_switch: true
           rg_services:
             - index: 1
-            row_ip_mask: row_ip_mask
+              row_ip_mask: row_ip_mask
           user_services:
             - index: 1
-            row_app_cli_commands: row_app_cli_commands
-            row_app_connected_service: row_app_connected_service
-            row_app_connected_service_ref_type_: service
-            row_app_enable: true
-            row_ip_mask: row_ip_mask
+              row_app_cli_commands: row_app_cli_commands
+              row_app_connected_service: row_app_connected_service
+              row_app_connected_service_ref_type_: service
+              row_app_enable: true
+              row_ip_mask: row_ip_mask
     params:
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'

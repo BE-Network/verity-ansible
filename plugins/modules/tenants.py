@@ -243,8 +243,8 @@ EXAMPLES = r'''
           route_target_import: route_target_import
           route_tenants:
             - enable: true
-            index: 1
-            tenant: tenant
+              index: 1
+              tenant: tenant
           vrf_name: vrf_name
           vrf_name_auto_assigned_: true
     params:
@@ -277,8 +277,8 @@ EXAMPLES = r'''
           route_target_import: route_target_import
           route_tenants:
             - enable: true
-            index: 1
-            tenant: tenant
+              index: 1
+              tenant: tenant
           vrf_name: vrf_name
           vrf_name_auto_assigned_: true
     params:

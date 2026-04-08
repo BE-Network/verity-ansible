@@ -142,9 +142,9 @@ EXAMPLES = r'''
           enable: true
           lists:
             - enable: true
-            index: 1
-            mode: route
-            route_target_expanded_expression: route_target_expanded_expression
+              index: 1
+              mode: route
+              route_target_expanded_expression: route_target_expanded_expression
           name: name
           object_properties:
             notes: notes
@@ -164,9 +164,9 @@ EXAMPLES = r'''
           enable: true
           lists:
             - enable: true
-            index: 1
-            mode: route
-            route_target_expanded_expression: route_target_expanded_expression
+              index: 1
+              mode: route
+              route_target_expanded_expression: route_target_expanded_expression
           name: name
           object_properties:
             notes: notes

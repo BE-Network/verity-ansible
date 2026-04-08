@@ -127,11 +127,11 @@ EXAMPLES = r'''
           enable: true
           lists:
             - enable: true
-            greater_than_equal_value: 1
-            index: 1
-            ipv4_prefix: ipv4_prefix
-            less_than_equal_value: 1
-            permit_deny: permit
+              greater_than_equal_value: 1
+              index: 1
+              ipv4_prefix: ipv4_prefix
+              less_than_equal_value: 1
+              permit_deny: permit
           name: name
           object_properties:
             notes: notes
@@ -148,11 +148,11 @@ EXAMPLES = r'''
           enable: true
           lists:
             - enable: true
-            greater_than_equal_value: 1
-            index: 1
-            ipv4_prefix: ipv4_prefix
-            less_than_equal_value: 1
-            permit_deny: permit
+              greater_than_equal_value: 1
+              index: 1
+              ipv4_prefix: ipv4_prefix
+              less_than_equal_value: 1
+              permit_deny: permit
           name: name
           object_properties:
             notes: notes

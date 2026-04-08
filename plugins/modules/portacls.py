@@ -168,20 +168,20 @@ EXAMPLES = r'''
           enable: true
           ipv4_deny:
             - enable: true
-            filter: filter
-            filter_ref_type_: ipv4_filter
+              filter: filter
+              filter_ref_type_: ipv4_filter
           ipv4_permit:
             - enable: true
-            filter: filter
-            filter_ref_type_: ipv4_filter
+              filter: filter
+              filter_ref_type_: ipv4_filter
           ipv6_deny:
             - enable: true
-            filter: filter
-            filter_ref_type_: ipv6_filter
+              filter: filter
+              filter_ref_type_: ipv6_filter
           ipv6_permit:
             - enable: true
-            filter: filter
-            filter_ref_type_: ipv6_filter
+              filter: filter
+              filter_ref_type_: ipv6_filter
           name: name
     params:
       changeset_name: changeset_name
@@ -196,20 +196,20 @@ EXAMPLES = r'''
           enable: true
           ipv4_deny:
             - enable: true
-            filter: filter
-            filter_ref_type_: ipv4_filter
+              filter: filter
+              filter_ref_type_: ipv4_filter
           ipv4_permit:
             - enable: true
-            filter: filter
-            filter_ref_type_: ipv4_filter
+              filter: filter
+              filter_ref_type_: ipv4_filter
           ipv6_deny:
             - enable: true
-            filter: filter
-            filter_ref_type_: ipv6_filter
+              filter: filter
+              filter_ref_type_: ipv6_filter
           ipv6_permit:
             - enable: true
-            filter: filter
-            filter_ref_type_: ipv6_filter
+              filter: filter
+              filter_ref_type_: ipv6_filter
           name: name
     params:
       changeset_name: changeset_name

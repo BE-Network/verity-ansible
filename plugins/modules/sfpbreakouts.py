@@ -149,9 +149,9 @@ EXAMPLES = r'''
         TestSFP Breakout:
           breakout:
             - breakout: 8x1G
-            enable: true
-            part_number: part_number
-            vendor: vendor
+              enable: true
+              part_number: part_number
+              vendor: vendor
           enable: true
           name: name
           object_properties: {}
@@ -167,9 +167,9 @@ EXAMPLES = r'''
         TestSFP Breakout:
           breakout:
             - breakout: 8x1G
-            enable: true
-            part_number: part_number
-            vendor: vendor
+              enable: true
+              part_number: part_number
+              vendor: vendor
           enable: true
           name: name
           object_properties: {}

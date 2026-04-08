@@ -138,11 +138,11 @@ EXAMPLES = r'''
           enable: true
           external_gateways:
             - enable: true
-            gateway: gateway
-            gateway_ref_type_: gateway
-            index: 1
-            peer_gw: true
-            source_ip_mask: source_ip_mask
+              gateway: gateway
+              gateway_ref_type_: gateway
+              index: 1
+              peer_gw: true
+              source_ip_mask: source_ip_mask
           name: name
           object_properties:
             group: group
@@ -160,11 +160,11 @@ EXAMPLES = r'''
           enable: true
           external_gateways:
             - enable: true
-            gateway: gateway
-            gateway_ref_type_: gateway
-            index: 1
-            peer_gw: true
-            source_ip_mask: source_ip_mask
+              gateway: gateway
+              gateway_ref_type_: gateway
+              index: 1
+              peer_gw: true
+              source_ip_mask: source_ip_mask
           name: name
           object_properties:
             group: group

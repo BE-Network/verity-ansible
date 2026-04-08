@@ -113,8 +113,8 @@ EXAMPLES = r'''
           enable: true
           lists:
             - enable: true
-            index: 1
-            regular_expression: regular_expression
+              index: 1
+              regular_expression: regular_expression
           name: name
           object_properties:
             notes: notes
@@ -132,8 +132,8 @@ EXAMPLES = r'''
           enable: true
           lists:
             - enable: true
-            index: 1
-            regular_expression: regular_expression
+              index: 1
+              regular_expression: regular_expression
           name: name
           object_properties:
             notes: notes

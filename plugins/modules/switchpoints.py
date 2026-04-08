@@ -429,30 +429,30 @@ EXAMPLES = r'''
         TestSwitchpoint:
           badges:
             - badge: badge
-            badge_ref_type_: badge
-            index: 1
+              badge_ref_type_: badge
+              index: 1
           bgp_as_number: 1
           bgp_as_number_auto_assigned_: true
           children:
             - child_num_device: child_num_device
-            child_num_endpoint: child_num_endpoint
-            child_num_endpoint_ref_type_: switchpoint
-            index: 1
+              child_num_endpoint: child_num_endpoint
+              child_num_endpoint_ref_type_: switchpoint
+              index: 1
           connected_bundle: connected_bundle
           connected_bundle_ref_type_: endpoint_bundle
           device_serial_number: device_serial_number
           disabled_ports: disabled_ports
           eths:
             - breakout: 8x1G
-            index: 1
+              index: 1
           locked: true
           name: name
           object_properties:
             aggregate: true
             eths:
               - eth_num_icon: eth_num_icon
-              eth_num_label: eth_num_label
-              index: 1
+                eth_num_label: eth_num_label
+                index: 1
             expected_parent_endpoint: expected_parent_endpoint
             expected_parent_endpoint_ref_type_: switchpoint
             is_host: true
@@ -470,12 +470,12 @@ EXAMPLES = r'''
           switch_vtep_id_ip_mask_auto_assigned_: true
           traffic_mirrors:
             - index: 1
-            traffic_mirror_num_destination_port: traffic_mirror_num_destination_port
-            traffic_mirror_num_enable: true
-            traffic_mirror_num_inbound_traffic: true
-            traffic_mirror_num_outbound_traffic: true
-            traffic_mirror_num_source_lag_indicator: true
-            traffic_mirror_num_source_port: traffic_mirror_num_source_port
+              traffic_mirror_num_destination_port: traffic_mirror_num_destination_port
+              traffic_mirror_num_enable: true
+              traffic_mirror_num_inbound_traffic: true
+              traffic_mirror_num_outbound_traffic: true
+              traffic_mirror_num_source_lag_indicator: true
+              traffic_mirror_num_source_port: traffic_mirror_num_source_port
           type: ''
     params:
       changeset_name: changeset_name
@@ -489,30 +489,30 @@ EXAMPLES = r'''
         TestSwitchpoint:
           badges:
             - badge: badge
-            badge_ref_type_: badge
-            index: 1
+              badge_ref_type_: badge
+              index: 1
           bgp_as_number: 1
           bgp_as_number_auto_assigned_: true
           children:
             - child_num_device: child_num_device
-            child_num_endpoint: child_num_endpoint
-            child_num_endpoint_ref_type_: switchpoint
-            index: 1
+              child_num_endpoint: child_num_endpoint
+              child_num_endpoint_ref_type_: switchpoint
+              index: 1
           connected_bundle: connected_bundle
           connected_bundle_ref_type_: endpoint_bundle
           device_serial_number: device_serial_number
           disabled_ports: disabled_ports
           eths:
             - breakout: 8x1G
-            index: 1
+              index: 1
           locked: true
           name: name
           object_properties:
             aggregate: true
             eths:
               - eth_num_icon: eth_num_icon
-              eth_num_label: eth_num_label
-              index: 1
+                eth_num_label: eth_num_label
+                index: 1
             expected_parent_endpoint: expected_parent_endpoint
             expected_parent_endpoint_ref_type_: switchpoint
             is_host: true
@@ -530,12 +530,12 @@ EXAMPLES = r'''
           switch_vtep_id_ip_mask_auto_assigned_: true
           traffic_mirrors:
             - index: 1
-            traffic_mirror_num_destination_port: traffic_mirror_num_destination_port
-            traffic_mirror_num_enable: true
-            traffic_mirror_num_inbound_traffic: true
-            traffic_mirror_num_outbound_traffic: true
-            traffic_mirror_num_source_lag_indicator: true
-            traffic_mirror_num_source_port: traffic_mirror_num_source_port
+              traffic_mirror_num_destination_port: traffic_mirror_num_destination_port
+              traffic_mirror_num_enable: true
+              traffic_mirror_num_inbound_traffic: true
+              traffic_mirror_num_outbound_traffic: true
+              traffic_mirror_num_source_lag_indicator: true
+              traffic_mirror_num_source_port: traffic_mirror_num_source_port
           type: ''
     params:
       changeset_name: changeset_name

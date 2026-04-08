@@ -115,9 +115,9 @@ EXAMPLES = r'''
             notes: notes
           route_map_clauses:
             - enable: true
-            index: 1
-            route_map_clause: route_map_clause
-            route_map_clause_ref_type_: route_map_clause
+              index: 1
+              route_map_clause: route_map_clause
+              route_map_clause_ref_type_: route_map_clause
     params:
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
@@ -134,9 +134,9 @@ EXAMPLES = r'''
             notes: notes
           route_map_clauses:
             - enable: true
-            index: 1
-            route_map_clause: route_map_clause
-            route_map_clause_ref_type_: route_map_clause
+              index: 1
+              route_map_clause: route_map_clause
+              route_map_clause_ref_type_: route_map_clause
     params:
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
