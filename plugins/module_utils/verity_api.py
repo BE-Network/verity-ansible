@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 # Common utilities for Verity API modules
 
+from __future__ import absolute_import, division, print_function
+
+__metaclass__ = type
+
 from ansible.module_utils.urls import open_url
 import json
 

@@ -1,3 +1,7 @@
+from __future__ import absolute_import, division, print_function
+
+__metaclass__ = type
+
 from ansible_collections.be_networks.verity.plugins.module_utils.verity_api import (
     authenticate,
     build_headers,
