@@ -12,7 +12,7 @@ MODULE_ARGS = dict(
     password=dict(type="str", required=False, no_log=True),
     params=dict(type="dict", required=False, default=None),
     data=dict(type="dict", required=False),
-    token=dict(type="str", required=True),
+    token=dict(type="str", required=False, no_log=True),
     action=dict(type="str", choices=["create", "update", "delete"], default="create"),
 )
 
