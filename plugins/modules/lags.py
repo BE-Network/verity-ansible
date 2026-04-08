@@ -135,6 +135,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions: {}
                 type: dict
               peer_link_vlan:

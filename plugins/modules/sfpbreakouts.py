@@ -150,6 +150,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions: {}
                 type: dict
             type: str
