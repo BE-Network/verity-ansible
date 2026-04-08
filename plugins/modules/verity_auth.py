@@ -1,5 +1,11 @@
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_api import authenticate
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Copyright: (c) 2025, BeyondEdge Networks <you@example.com>
+# GNU General Public License v3.0+
+
+from __future__ import absolute_import, division, print_function
+__metaclass__ = type
 
 
 DOCUMENTATION = r'''author:
@@ -26,7 +32,6 @@ options:
     type: str
 short_description: Authenticate with the Verity API
 '''
-
 EXAMPLES = r'''
 - name: Authenticate once
   be_networks.verity.verity_auth:
@@ -42,6 +47,10 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_api import authenticate
 
 
 def main():

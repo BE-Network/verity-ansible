@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -53,6 +51,8 @@ options:
                 required: false
                 type: str
               eth_port_paths:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   eth_port_num_eth_port_profile:
@@ -122,6 +122,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   is_for_switch:
                     default: false
@@ -131,6 +133,8 @@ options:
                     type: bool
                 type: dict
               rg_services:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   index:
@@ -148,6 +152,8 @@ options:
                     type: str
                 type: list
               user_services:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   index:
@@ -206,6 +212,7 @@ options:
     type: dict
 short_description: Manage Bundles via Verity API
 '''
+
 
 EXAMPLES = r'''
 - name: Create Bundle
@@ -295,6 +302,9 @@ response:
   type: dict
 '''
 
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 def run_module():
     module = AnsibleModule(argument_spec=MODULE_ARGS, supports_check_mode=True)

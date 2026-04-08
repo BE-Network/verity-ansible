@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -61,6 +59,7 @@ options:
 short_description: Manage Pods via Verity API
 '''
 
+
 EXAMPLES = r'''
 - name: Create Pod
   be_networks.verity.pods:
@@ -103,6 +102,9 @@ response:
   type: dict
 '''
 
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 def run_module():
     module = AnsibleModule(argument_spec=MODULE_ARGS, supports_check_mode=True)

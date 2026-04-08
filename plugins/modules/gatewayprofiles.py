@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -42,6 +40,8 @@ options:
                 required: false
                 type: bool
               external_gateways:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -96,6 +96,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   group:
                     default: ''
@@ -126,6 +128,7 @@ options:
     type: dict
 short_description: Manage Gateway Profiles via Verity API
 '''
+
 
 EXAMPLES = r'''
 - name: Create Gateway Profile
@@ -189,6 +192,9 @@ response:
   type: dict
 '''
 
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 def run_module():
     module = AnsibleModule(argument_spec=MODULE_ARGS, supports_check_mode=True)

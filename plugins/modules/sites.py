@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -104,6 +102,8 @@ options:
                 required: false
                 type: bool
               islands:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   index:
@@ -177,8 +177,12 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   system_graphs:
+                    description:
+                    - No description provided
                     elements: dict
                     suboptions:
                       graph_num_data:
@@ -197,6 +201,8 @@ options:
                     type: list
                 type: dict
               pairs:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   index:
@@ -338,6 +344,7 @@ options:
 short_description: Manage Sites via Verity API
 '''
 
+
 EXAMPLES = r'''
 - name: Create Site
   be_networks.verity.sites:
@@ -466,6 +473,9 @@ response:
   type: dict
 '''
 
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 def run_module():
     module = AnsibleModule(argument_spec=MODULE_ARGS, supports_check_mode=True)

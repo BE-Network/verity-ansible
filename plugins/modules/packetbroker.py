@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -39,6 +37,8 @@ options:
                 required: false
                 type: bool
               ipv4_deny:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -71,6 +71,8 @@ options:
                     type: int
                 type: list
               ipv4_permit:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -103,6 +105,8 @@ options:
                     type: int
                 type: list
               ipv6_deny:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -135,6 +139,8 @@ options:
                     type: int
                 type: list
               ipv6_permit:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -188,6 +194,7 @@ options:
     type: dict
 short_description: Manage PacketBrokers via Verity API
 '''
+
 
 EXAMPLES = r'''
 - name: Create PacketBroker
@@ -271,6 +278,9 @@ response:
   type: dict
 '''
 
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 def run_module():
     module = AnsibleModule(argument_spec=MODULE_ARGS, supports_check_mode=True)

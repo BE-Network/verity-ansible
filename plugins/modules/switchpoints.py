@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -33,6 +31,8 @@ options:
             required: true
             suboptions:
               badges:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   badge:
@@ -72,6 +72,8 @@ options:
                 required: false
                 type: bool
               children:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   child_num_device:
@@ -131,6 +133,8 @@ options:
                 required: false
                 type: str
               eths:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   breakout:
@@ -208,6 +212,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   aggregate:
                     default: false
@@ -217,6 +223,8 @@ options:
                     required: false
                     type: bool
                   eths:
+                    description:
+                    - No description provided
                     elements: dict
                     suboptions:
                       eth_num_icon:
@@ -341,6 +349,8 @@ options:
                 required: false
                 type: bool
               traffic_mirrors:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   index:
@@ -418,6 +428,7 @@ options:
     type: dict
 short_description: Manage Switchpoints via Verity API
 '''
+
 
 EXAMPLES = r'''
 - name: Create Switchpoint
@@ -557,6 +568,9 @@ response:
   type: dict
 '''
 
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 def run_module():
     module = AnsibleModule(argument_spec=MODULE_ARGS, supports_check_mode=True)
