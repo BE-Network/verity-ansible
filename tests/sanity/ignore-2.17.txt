@@ -1,1 +1,0 @@
-plugins/action/sample_action.py action-plugin-docs
