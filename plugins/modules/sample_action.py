@@ -9,25 +9,23 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
 
-DOCUMENTATION = r'''
----
-module: sample_action
-short_description: Sample module used for action plugin documentation matching
+DOCUMENTATION = r'''author:
+- BE Networks (@be_networks)
 description:
-  - This module exists to provide documentation for the C(sample_action) action plugin.
+- This module exists to provide documentation for the C(sample_action) action plugin.
+module: sample_action
 options:
   msg:
     description:
-      - Message to display.
-    type: str
+    - Message to display.
     required: false
+    type: str
   prefix:
     description:
-      - Optional prefix to prepend to C(msg).
-    type: str
+    - Optional prefix to prepend to C(msg).
     required: false
-author:
-  - BE Networks (@be_networks)
+    type: str
+short_description: Sample module used for action plugin documentation matching
 '''
 
 EXAMPLES = r'''
