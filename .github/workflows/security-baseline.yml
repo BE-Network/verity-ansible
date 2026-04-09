@@ -42,10 +42,11 @@ jobs:
             -w /repo \
             ghcr.io/gitleaks/gitleaks:latest \
             detect \
+            --config .gitleaks.toml \
             --source . \
             --report-format json \
             --report-path gitleaks-report.json \
-            --exit-code 0
+            --exit-code 1
 
       - name: Upload Gitleaks report
         if: always() && hashFiles('gitleaks-report.json') != ''
