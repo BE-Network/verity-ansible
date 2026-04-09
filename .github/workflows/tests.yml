@@ -25,6 +25,9 @@ jobs:
     uses: ansible/ansible-content-actions/.github/workflows/sanity.yaml@main
   unit-galaxy:
     uses: ansible/ansible-content-actions/.github/workflows/unit.yaml@main
+    with:
+      collection_pre_install: >-
+        git+https://github.com/ansible-collections/ansible.utils.git
   unit-source:
     uses: ansible-network/github_actions/.github/workflows/unit_source.yml@main
     with:
