@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -17,6 +15,36 @@ description:
 - This module interacts with the `/ipv6prefixlists` endpoints.
 module: ipv6prefixlists
 options:
+  base_url:
+    description:
+    - vNetC base URL.
+    required: true
+    type: str
+  token:
+    description:
+    - Authentication token returned by verity_auth (session cookie value).
+    required: false
+    type: str
+  username:
+    description:
+    - Username (used only if token is not provided).
+    required: false
+    type: str
+  password:
+    description:
+    - Password (used only if token is not provided).
+    required: false
+    type: str
+  action:
+    description:
+    - Action to perform against the Verity API endpoint.
+    required: false
+    type: str
+    default: create
+    choices:
+    - create
+    - update
+    - delete
   data:
     description:
     - IPv6 Prefix List definition object.
@@ -39,6 +67,8 @@ options:
                 required: false
                 type: bool
               lists:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -84,6 +114,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   notes:
                     default: ''
@@ -109,7 +141,9 @@ options:
 short_description: Manage IPv6 Prefix Lists via Verity API
 '''
 
-EXAMPLES = r'''- name: Create IPv6 Prefix List
+
+EXAMPLES = r'''
+- name: Create IPv6 Prefix List
   be_networks.verity.ipv6prefixlists:
     action: create
     base_url: '{{ auth_result.base_url }}'
@@ -118,11 +152,11 @@ EXAMPLES = r'''- name: Create IPv6 Prefix List
         TestIPv6 Prefix List:
           enable: true
           lists:
-          - enable: true
-            greater_than_equal_value: 1
-            ipv6_prefix: ipv6_prefix
-            less_than_equal_value: 1
-            permit_deny: permit
+            - enable: true
+              greater_than_equal_value: 1
+              ipv6_prefix: ipv6_prefix
+              less_than_equal_value: 1
+              permit_deny: permit
           name: name
           object_properties:
             notes: notes
@@ -138,11 +172,11 @@ EXAMPLES = r'''- name: Create IPv6 Prefix List
         TestIPv6 Prefix List:
           enable: true
           lists:
-          - enable: true
-            greater_than_equal_value: 1
-            ipv6_prefix: ipv6_prefix
-            less_than_equal_value: 1
-            permit_deny: permit
+            - enable: true
+              greater_than_equal_value: 1
+              ipv6_prefix: ipv6_prefix
+              less_than_equal_value: 1
+              permit_deny: permit
           name: name
           object_properties:
             notes: notes
@@ -165,6 +199,10 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 def run_module():

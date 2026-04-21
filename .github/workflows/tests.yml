@@ -14,6 +14,14 @@ on: # yamllint disable-line rule:truthy
     # - cron: '0 0 * * *'
 
 jobs:
+  harden-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
   changelog:
     uses: ansible/ansible-content-actions/.github/workflows/changelog.yaml@main
     if: github.event_name == 'pull_request'
@@ -25,6 +33,9 @@ jobs:
     uses: ansible/ansible-content-actions/.github/workflows/sanity.yaml@main
   unit-galaxy:
     uses: ansible/ansible-content-actions/.github/workflows/unit.yaml@main
+    with:
+      collection_pre_install: >-
+        git+https://github.com/ansible-collections/ansible.utils.git
   unit-source:
     uses: ansible-network/github_actions/.github/workflows/unit_source.yml@main
     with:

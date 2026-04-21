@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -17,6 +15,36 @@ description:
 - This module interacts with the `/gateways` endpoints.
 module: gateways
 options:
+  base_url:
+    description:
+    - vNetC base URL.
+    required: true
+    type: str
+  token:
+    description:
+    - Authentication token returned by verity_auth (session cookie value).
+    required: false
+    type: str
+  username:
+    description:
+    - Username (used only if token is not provided).
+    required: false
+    type: str
+  password:
+    description:
+    - Password (used only if token is not provided).
+    required: false
+    type: str
+  action:
+    description:
+    - Action to perform against the Verity API endpoint.
+    required: false
+    type: str
+    default: create
+    choices:
+    - create
+    - update
+    - delete
   data:
     description:
     - Gateway definition object.
@@ -251,6 +279,8 @@ options:
                 required: false
                 type: bool
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   group:
                     default: ''
@@ -273,6 +303,8 @@ options:
                 required: false
                 type: str
               static_routes:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   ad_value:
@@ -340,7 +372,9 @@ options:
 short_description: Manage Gateways via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Gateway
+
+EXAMPLES = r'''
+- name: Create Gateway
   be_networks.verity.gateways:
     action: create
     base_url: '{{ auth_result.base_url }}'
@@ -383,11 +417,11 @@ EXAMPLES = r'''- name: Create Gateway
           replace_as: true
           source_ip_address: source_ip_address
           static_routes:
-          - ad_value: 1
-            enable: true
-            index: 1
-            ipv4_route_prefix: ipv4_route_prefix
-            next_hop_ip_address: next_hop_ip_address
+            - ad_value: 1
+              enable: true
+              index: 1
+              ipv4_route_prefix: ipv4_route_prefix
+              next_hop_ip_address: next_hop_ip_address
           tenant: tenant
           tenant_ref_type_: tenant
     params:
@@ -436,11 +470,11 @@ EXAMPLES = r'''- name: Create Gateway
           replace_as: true
           source_ip_address: source_ip_address
           static_routes:
-          - ad_value: 1
-            enable: true
-            index: 1
-            ipv4_route_prefix: ipv4_route_prefix
-            next_hop_ip_address: next_hop_ip_address
+            - ad_value: 1
+              enable: true
+              index: 1
+              ipv4_route_prefix: ipv4_route_prefix
+              next_hop_ip_address: next_hop_ip_address
           tenant: tenant
           tenant_ref_type_: tenant
     params:
@@ -462,6 +496,10 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 def run_module():

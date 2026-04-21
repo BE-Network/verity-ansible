@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -17,6 +15,36 @@ description:
 - This module interacts with the `/acls` endpoints.
 module: acls
 options:
+  base_url:
+    description:
+    - vNetC base URL.
+    required: true
+    type: str
+  token:
+    description:
+    - Authentication token returned by verity_auth (session cookie value).
+    required: false
+    type: str
+  username:
+    description:
+    - Username (used only if token is not provided).
+    required: false
+    type: str
+  password:
+    description:
+    - Password (used only if token is not provided).
+    required: false
+    type: str
+  action:
+    description:
+    - Action to perform against the Verity API endpoint.
+    required: false
+    type: str
+    default: create
+    choices:
+    - create
+    - update
+    - delete
   data:
     description:
     - ACL definition object.
@@ -87,6 +115,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   notes:
                     default: ''
@@ -158,7 +188,8 @@ options:
 short_description: Manage ACLs via Verity API
 '''
 
-EXAMPLES = r'''- name: Create ACL
+EXAMPLES = r'''
+- name: Create ACL
   be_networks.verity.acls:
     action: create
     base_url: '{{ auth_result.base_url }}'
@@ -225,6 +256,13 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import (
+    MODULE_ARGS,
+    run_resource,
+)
 
 
 def run_module():

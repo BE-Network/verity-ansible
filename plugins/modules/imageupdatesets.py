@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -17,6 +15,36 @@ description:
 - This module interacts with the `/imageupdatesets` endpoints.
 module: imageupdatesets
 options:
+  base_url:
+    description:
+    - vNetC base URL.
+    required: true
+    type: str
+  token:
+    description:
+    - Authentication token returned by verity_auth (session cookie value).
+    required: false
+    type: str
+  username:
+    description:
+    - Username (used only if token is not provided).
+    required: false
+    type: str
+  password:
+    description:
+    - Password (used only if token is not provided).
+    required: false
+    type: str
+  action:
+    description:
+    - Action to perform against the Verity API endpoint.
+    required: false
+    type: str
+    default: create
+    choices:
+    - create
+    - update
+    - delete
   data:
     description:
     - Image Update Set definition object.
@@ -57,6 +85,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   firmware_count:
                     default: 0
@@ -72,6 +102,8 @@ options:
                 required: false
                 type: bool
               section:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   endpoint_set_num_name:
@@ -227,6 +259,8 @@ options:
                     type: str
                 type: list
               section_else:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   endpoint_set_for_all_others_target_upgrade_version:
@@ -265,6 +299,8 @@ options:
                     type: bool
                 type: list
               section_pointless:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   endpoint_set_for_endpointless_target_upgrade_version:
@@ -334,7 +370,9 @@ options:
 short_description: Manage Image Update Sets via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Image Update Set
+
+EXAMPLES = r'''
+- name: Create Image Update Set
   be_networks.verity.imageupdatesets:
     action: create
     base_url: '{{ auth_result.base_url }}'
@@ -349,38 +387,38 @@ EXAMPLES = r'''- name: Create Image Update Set
             firmware_count: 1
           provisioning_on_summary: true
           section:
-          - endpoint_set_num_name: endpoint_set_num_name
-            endpoint_set_num_on_summary: true
-            endpoint_set_num_subrule_1_inverted: true
-            endpoint_set_num_subrule_1_reference_path: endpoint_set_num_subrule_1_reference_path
-            endpoint_set_num_subrule_1_reference_path_ref_type_: endpoint_set_num_subrule_1_reference_path_ref_type_
-            endpoint_set_num_subrule_1_type: ''
-            endpoint_set_num_subrule_1_value: endpoint_set_num_subrule_1_value
-            endpoint_set_num_subrule_2_inverted: true
-            endpoint_set_num_subrule_2_reference_path: endpoint_set_num_subrule_2_reference_path
-            endpoint_set_num_subrule_2_reference_path_ref_type_: endpoint_set_num_subrule_2_reference_path_ref_type_
-            endpoint_set_num_subrule_2_type: ''
-            endpoint_set_num_subrule_2_value: endpoint_set_num_subrule_2_value
-            endpoint_set_num_subrule_3_inverted: true
-            endpoint_set_num_subrule_3_reference_path: endpoint_set_num_subrule_3_reference_path
-            endpoint_set_num_subrule_3_reference_path_ref_type_: endpoint_set_num_subrule_3_reference_path_ref_type_
-            endpoint_set_num_subrule_3_type: ''
-            endpoint_set_num_subrule_3_value: endpoint_set_num_subrule_3_value
-            endpoint_set_num_target_upgrade_version: 1.8.1.5
-            endpoint_set_num_target_upgrade_version_time: endpoint_set_num_target_upgrade_version_time
-            endpoint_set_num_unique_identifier: endpoint_set_num_unique_identifier
+            - endpoint_set_num_name: endpoint_set_num_name
+              endpoint_set_num_on_summary: true
+              endpoint_set_num_subrule_1_inverted: true
+              endpoint_set_num_subrule_1_reference_path: endpoint_set_num_subrule_1_reference_path
+              endpoint_set_num_subrule_1_reference_path_ref_type_: endpoint_set_num_subrule_1_reference_path_ref_type_
+              endpoint_set_num_subrule_1_type: ''
+              endpoint_set_num_subrule_1_value: endpoint_set_num_subrule_1_value
+              endpoint_set_num_subrule_2_inverted: true
+              endpoint_set_num_subrule_2_reference_path: endpoint_set_num_subrule_2_reference_path
+              endpoint_set_num_subrule_2_reference_path_ref_type_: endpoint_set_num_subrule_2_reference_path_ref_type_
+              endpoint_set_num_subrule_2_type: ''
+              endpoint_set_num_subrule_2_value: endpoint_set_num_subrule_2_value
+              endpoint_set_num_subrule_3_inverted: true
+              endpoint_set_num_subrule_3_reference_path: endpoint_set_num_subrule_3_reference_path
+              endpoint_set_num_subrule_3_reference_path_ref_type_: endpoint_set_num_subrule_3_reference_path_ref_type_
+              endpoint_set_num_subrule_3_type: ''
+              endpoint_set_num_subrule_3_value: endpoint_set_num_subrule_3_value
+              endpoint_set_num_target_upgrade_version: 1.8.1.5
+              endpoint_set_num_target_upgrade_version_time: endpoint_set_num_target_upgrade_version_time
+              endpoint_set_num_unique_identifier: endpoint_set_num_unique_identifier
           section_else:
-          - endpoint_set_for_all_others_target_upgrade_version: 1.8.1.5
-            endpoint_set_for_all_others_target_upgrade_version_time: endpoint_set_for_all_others_target_upgrade_version_time
-            endpoint_set_for_all_others_unique_identifier: endpoint_set_for_all_others_unique_identifier
-            endpoint_set_num_name: endpoint_set_num_name
-            endpoint_set_num_on_summary: true
+            - endpoint_set_for_all_others_target_upgrade_version: 1.8.1.5
+              endpoint_set_for_all_others_target_upgrade_version_time: endpoint_set_for_all_others_target_upgrade_version_time
+              endpoint_set_for_all_others_unique_identifier: endpoint_set_for_all_others_unique_identifier
+              endpoint_set_num_name: endpoint_set_num_name
+              endpoint_set_num_on_summary: true
           section_pointless:
-          - endpoint_set_for_endpointless_target_upgrade_version: 1.8.1.5
-            endpoint_set_for_endpointless_target_upgrade_version_time: endpoint_set_for_endpointless_target_upgrade_version_time
-            endpoint_set_for_endpointless_unique_identifier: endpoint_set_for_endpointless_unique_identifier
-            endpoint_set_num_name: endpoint_set_num_name
-            endpoint_set_num_on_summary: true
+            - endpoint_set_for_endpointless_target_upgrade_version: 1.8.1.5
+              endpoint_set_for_endpointless_target_upgrade_version_time: endpoint_set_for_endpointless_target_upgrade_version_time
+              endpoint_set_for_endpointless_unique_identifier: endpoint_set_for_endpointless_unique_identifier
+              endpoint_set_num_name: endpoint_set_num_name
+              endpoint_set_num_on_summary: true
           type: whitebox
           upgrader_on_summary: true
     params:
@@ -401,38 +439,38 @@ EXAMPLES = r'''- name: Create Image Update Set
             firmware_count: 1
           provisioning_on_summary: true
           section:
-          - endpoint_set_num_name: endpoint_set_num_name
-            endpoint_set_num_on_summary: true
-            endpoint_set_num_subrule_1_inverted: true
-            endpoint_set_num_subrule_1_reference_path: endpoint_set_num_subrule_1_reference_path
-            endpoint_set_num_subrule_1_reference_path_ref_type_: endpoint_set_num_subrule_1_reference_path_ref_type_
-            endpoint_set_num_subrule_1_type: ''
-            endpoint_set_num_subrule_1_value: endpoint_set_num_subrule_1_value
-            endpoint_set_num_subrule_2_inverted: true
-            endpoint_set_num_subrule_2_reference_path: endpoint_set_num_subrule_2_reference_path
-            endpoint_set_num_subrule_2_reference_path_ref_type_: endpoint_set_num_subrule_2_reference_path_ref_type_
-            endpoint_set_num_subrule_2_type: ''
-            endpoint_set_num_subrule_2_value: endpoint_set_num_subrule_2_value
-            endpoint_set_num_subrule_3_inverted: true
-            endpoint_set_num_subrule_3_reference_path: endpoint_set_num_subrule_3_reference_path
-            endpoint_set_num_subrule_3_reference_path_ref_type_: endpoint_set_num_subrule_3_reference_path_ref_type_
-            endpoint_set_num_subrule_3_type: ''
-            endpoint_set_num_subrule_3_value: endpoint_set_num_subrule_3_value
-            endpoint_set_num_target_upgrade_version: 1.8.1.5
-            endpoint_set_num_target_upgrade_version_time: endpoint_set_num_target_upgrade_version_time
-            endpoint_set_num_unique_identifier: endpoint_set_num_unique_identifier
+            - endpoint_set_num_name: endpoint_set_num_name
+              endpoint_set_num_on_summary: true
+              endpoint_set_num_subrule_1_inverted: true
+              endpoint_set_num_subrule_1_reference_path: endpoint_set_num_subrule_1_reference_path
+              endpoint_set_num_subrule_1_reference_path_ref_type_: endpoint_set_num_subrule_1_reference_path_ref_type_
+              endpoint_set_num_subrule_1_type: ''
+              endpoint_set_num_subrule_1_value: endpoint_set_num_subrule_1_value
+              endpoint_set_num_subrule_2_inverted: true
+              endpoint_set_num_subrule_2_reference_path: endpoint_set_num_subrule_2_reference_path
+              endpoint_set_num_subrule_2_reference_path_ref_type_: endpoint_set_num_subrule_2_reference_path_ref_type_
+              endpoint_set_num_subrule_2_type: ''
+              endpoint_set_num_subrule_2_value: endpoint_set_num_subrule_2_value
+              endpoint_set_num_subrule_3_inverted: true
+              endpoint_set_num_subrule_3_reference_path: endpoint_set_num_subrule_3_reference_path
+              endpoint_set_num_subrule_3_reference_path_ref_type_: endpoint_set_num_subrule_3_reference_path_ref_type_
+              endpoint_set_num_subrule_3_type: ''
+              endpoint_set_num_subrule_3_value: endpoint_set_num_subrule_3_value
+              endpoint_set_num_target_upgrade_version: 1.8.1.5
+              endpoint_set_num_target_upgrade_version_time: endpoint_set_num_target_upgrade_version_time
+              endpoint_set_num_unique_identifier: endpoint_set_num_unique_identifier
           section_else:
-          - endpoint_set_for_all_others_target_upgrade_version: 1.8.1.5
-            endpoint_set_for_all_others_target_upgrade_version_time: endpoint_set_for_all_others_target_upgrade_version_time
-            endpoint_set_for_all_others_unique_identifier: endpoint_set_for_all_others_unique_identifier
-            endpoint_set_num_name: endpoint_set_num_name
-            endpoint_set_num_on_summary: true
+            - endpoint_set_for_all_others_target_upgrade_version: 1.8.1.5
+              endpoint_set_for_all_others_target_upgrade_version_time: endpoint_set_for_all_others_target_upgrade_version_time
+              endpoint_set_for_all_others_unique_identifier: endpoint_set_for_all_others_unique_identifier
+              endpoint_set_num_name: endpoint_set_num_name
+              endpoint_set_num_on_summary: true
           section_pointless:
-          - endpoint_set_for_endpointless_target_upgrade_version: 1.8.1.5
-            endpoint_set_for_endpointless_target_upgrade_version_time: endpoint_set_for_endpointless_target_upgrade_version_time
-            endpoint_set_for_endpointless_unique_identifier: endpoint_set_for_endpointless_unique_identifier
-            endpoint_set_num_name: endpoint_set_num_name
-            endpoint_set_num_on_summary: true
+            - endpoint_set_for_endpointless_target_upgrade_version: 1.8.1.5
+              endpoint_set_for_endpointless_target_upgrade_version_time: endpoint_set_for_endpointless_target_upgrade_version_time
+              endpoint_set_for_endpointless_unique_identifier: endpoint_set_for_endpointless_unique_identifier
+              endpoint_set_num_name: endpoint_set_num_name
+              endpoint_set_num_on_summary: true
           type: whitebox
           upgrader_on_summary: true
     params:
@@ -454,6 +492,10 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 def run_module():

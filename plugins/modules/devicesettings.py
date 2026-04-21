@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -17,6 +15,36 @@ description:
 - This module interacts with the `/devicesettings` endpoints.
 module: devicesettings
 options:
+  base_url:
+    description:
+    - vNetC base URL.
+    required: true
+    type: str
+  token:
+    description:
+    - Authentication token returned by verity_auth (session cookie value).
+    required: false
+    type: str
+  username:
+    description:
+    - Username (used only if token is not provided).
+    required: false
+    type: str
+  password:
+    description:
+    - Password (used only if token is not provided).
+    required: false
+    type: str
+  action:
+    description:
+    - Action to perform against the Verity API endpoint.
+    required: false
+    type: str
+    default: create
+    choices:
+    - create
+    - update
+    - delete
   data:
     description:
     - Device Setting definition object.
@@ -88,6 +116,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   group:
                     default: ''
@@ -138,7 +168,9 @@ options:
 short_description: Manage Device Settings via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Device Setting
+
+EXAMPLES = r'''
+- name: Create Device Setting
   be_networks.verity.devicesettings:
     action: create
     base_url: '{{ auth_result.base_url }}'
@@ -200,6 +232,10 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 def run_module():

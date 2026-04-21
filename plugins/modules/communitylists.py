@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -17,6 +15,36 @@ description:
 - This module interacts with the `/communitylists` endpoints.
 module: communitylists
 options:
+  base_url:
+    description:
+    - vNetC base URL.
+    required: true
+    type: str
+  token:
+    description:
+    - Authentication token returned by verity_auth (session cookie value).
+    required: false
+    type: str
+  username:
+    description:
+    - Username (used only if token is not provided).
+    required: false
+    type: str
+  password:
+    description:
+    - Password (used only if token is not provided).
+    required: false
+    type: str
+  action:
+    description:
+    - Action to perform against the Verity API endpoint.
+    required: false
+    type: str
+    default: create
+    choices:
+    - create
+    - update
+    - delete
   data:
     description:
     - Community List definition object.
@@ -49,6 +77,8 @@ options:
                 required: false
                 type: bool
               lists:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   community_string_expanded_expression:
@@ -91,6 +121,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   notes:
                     default: ''
@@ -134,7 +166,9 @@ options:
 short_description: Manage Community Lists via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Community List
+
+EXAMPLES = r'''
+- name: Create Community List
   be_networks.verity.communitylists:
     action: create
     base_url: '{{ auth_result.base_url }}'
@@ -144,10 +178,10 @@ EXAMPLES = r'''- name: Create Community List
           any_all: any
           enable: true
           lists:
-          - community_string_expanded_expression: community_string_expanded_expression
-            enable: true
-            index: 1
-            mode: no_advertise
+            - community_string_expanded_expression: community_string_expanded_expression
+              enable: true
+              index: 1
+              mode: no_advertise
           name: name
           object_properties:
             notes: notes
@@ -166,10 +200,10 @@ EXAMPLES = r'''- name: Create Community List
           any_all: any
           enable: true
           lists:
-          - community_string_expanded_expression: community_string_expanded_expression
-            enable: true
-            index: 1
-            mode: no_advertise
+            - community_string_expanded_expression: community_string_expanded_expression
+              enable: true
+              index: 1
+              mode: no_advertise
           name: name
           object_properties:
             notes: notes
@@ -194,6 +228,10 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 def run_module():

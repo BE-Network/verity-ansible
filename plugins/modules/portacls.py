@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -17,6 +15,36 @@ description:
 - This module interacts with the `/portacls` endpoints.
 module: portacls
 options:
+  base_url:
+    description:
+    - vNetC base URL.
+    required: true
+    type: str
+  token:
+    description:
+    - Authentication token returned by verity_auth (session cookie value).
+    required: false
+    type: str
+  username:
+    description:
+    - Username (used only if token is not provided).
+    required: false
+    type: str
+  password:
+    description:
+    - Password (used only if token is not provided).
+    required: false
+    type: str
+  action:
+    description:
+    - Action to perform against the Verity API endpoint.
+    required: false
+    type: str
+    default: create
+    choices:
+    - create
+    - update
+    - delete
   data:
     description:
     - Port ACL definition object.
@@ -39,6 +67,8 @@ options:
                 required: false
                 type: bool
               ipv4_deny:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -63,6 +93,8 @@ options:
                     type: str
                 type: list
               ipv4_permit:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -87,6 +119,8 @@ options:
                     type: str
                 type: list
               ipv6_deny:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -111,6 +145,8 @@ options:
                     type: str
                 type: list
               ipv6_permit:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   enable:
@@ -157,7 +193,9 @@ options:
 short_description: Manage Port ACLs via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Port ACL
+
+EXAMPLES = r'''
+- name: Create Port ACL
   be_networks.verity.portacls:
     action: create
     base_url: '{{ auth_result.base_url }}'
@@ -166,21 +204,21 @@ EXAMPLES = r'''- name: Create Port ACL
         TestPort ACL:
           enable: true
           ipv4_deny:
-          - enable: true
-            filter: filter
-            filter_ref_type_: ipv4_filter
+            - enable: true
+              filter: filter
+              filter_ref_type_: ipv4_filter
           ipv4_permit:
-          - enable: true
-            filter: filter
-            filter_ref_type_: ipv4_filter
+            - enable: true
+              filter: filter
+              filter_ref_type_: ipv4_filter
           ipv6_deny:
-          - enable: true
-            filter: filter
-            filter_ref_type_: ipv6_filter
+            - enable: true
+              filter: filter
+              filter_ref_type_: ipv6_filter
           ipv6_permit:
-          - enable: true
-            filter: filter
-            filter_ref_type_: ipv6_filter
+            - enable: true
+              filter: filter
+              filter_ref_type_: ipv6_filter
           name: name
     params:
       changeset_name: changeset_name
@@ -194,21 +232,21 @@ EXAMPLES = r'''- name: Create Port ACL
         TestPort ACL:
           enable: true
           ipv4_deny:
-          - enable: true
-            filter: filter
-            filter_ref_type_: ipv4_filter
+            - enable: true
+              filter: filter
+              filter_ref_type_: ipv4_filter
           ipv4_permit:
-          - enable: true
-            filter: filter
-            filter_ref_type_: ipv4_filter
+            - enable: true
+              filter: filter
+              filter_ref_type_: ipv4_filter
           ipv6_deny:
-          - enable: true
-            filter: filter
-            filter_ref_type_: ipv6_filter
+            - enable: true
+              filter: filter
+              filter_ref_type_: ipv6_filter
           ipv6_permit:
-          - enable: true
-            filter: filter
-            filter_ref_type_: ipv6_filter
+            - enable: true
+              filter: filter
+              filter_ref_type_: ipv6_filter
           name: name
     params:
       changeset_name: changeset_name
@@ -229,6 +267,10 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 def run_module():

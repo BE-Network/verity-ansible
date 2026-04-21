@@ -1,0 +1,3 @@
+bugfixes:
+  - Fix YAML parsing of module examples for ansible-lint.
+  - Fix trailing whitespace in GitHub workflow.

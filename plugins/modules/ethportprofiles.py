@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -17,6 +15,36 @@ description:
 - This module interacts with the `/ethportprofiles` endpoints.
 module: ethportprofiles
 options:
+  base_url:
+    description:
+    - vNetC base URL.
+    required: true
+    type: str
+  token:
+    description:
+    - Authentication token returned by verity_auth (session cookie value).
+    required: false
+    type: str
+  username:
+    description:
+    - Username (used only if token is not provided).
+    required: false
+    type: str
+  password:
+    description:
+    - Password (used only if token is not provided).
+    required: false
+    type: str
+  action:
+    description:
+    - Action to perform against the Verity API endpoint.
+    required: false
+    type: str
+    default: create
+    choices:
+    - create
+    - update
+    - delete
   data:
     description:
     - Eth-Port Profile definition object.
@@ -48,6 +76,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   group:
                     default: ''
@@ -67,6 +97,8 @@ options:
                     type: str
                 type: dict
               services:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   index:
@@ -129,7 +161,9 @@ options:
 short_description: Manage Eth-Port Profiles via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Eth-Port Profile
+
+EXAMPLES = r'''
+- name: Create Eth-Port Profile
   be_networks.verity.ethportprofiles:
     action: create
     base_url: '{{ auth_result.base_url }}'
@@ -142,11 +176,11 @@ EXAMPLES = r'''- name: Create Eth-Port Profile
             group: group
             port_monitoring: critical
           services:
-          - index: 1
-            row_num_enable: true
-            row_num_external_vlan: 1
-            row_num_service: row_num_service
-            row_num_service_ref_type_: service
+            - index: 1
+              row_num_enable: true
+              row_num_external_vlan: 1
+              row_num_service: row_num_service
+              row_num_service_ref_type_: service
           tenant_slice_managed: true
     params:
       changeset_name: changeset_name
@@ -164,11 +198,11 @@ EXAMPLES = r'''- name: Create Eth-Port Profile
             group: group
             port_monitoring: critical
           services:
-          - index: 1
-            row_num_enable: true
-            row_num_external_vlan: 1
-            row_num_service: row_num_service
-            row_num_service_ref_type_: service
+            - index: 1
+              row_num_enable: true
+              row_num_external_vlan: 1
+              row_num_service: row_num_service
+              row_num_service_ref_type_: service
           tenant_slice_managed: true
     params:
       changeset_name: changeset_name
@@ -189,6 +223,10 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 def run_module():

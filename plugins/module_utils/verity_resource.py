@@ -1,18 +1,24 @@
+from __future__ import absolute_import, division, print_function
+
+__metaclass__ = type
+
 from ansible_collections.be_networks.verity.plugins.module_utils.verity_api import (
     authenticate,
     build_headers,
 )
-import requests
+import json
+
+from ansible.module_utils.urls import open_url
 
 MODULE_ARGS = dict(
-        base_url=dict(type="str", required=True),
-        username=dict(type="str", required=False, no_log=True),
-        password=dict(type="str", required=False, no_log=True),
-        params=dict(type='dict', required=False, default=None),
-        data=dict(type="dict", required=False),
-        token=dict(type="str", required=True),
-        action=dict(type='str', choices=['create', 'update', 'delete'], default='create'),
-    )
+    base_url=dict(type="str", required=True),
+    username=dict(type="str", required=False, no_log=True),
+    password=dict(type="str", required=False, no_log=True),
+    params=dict(type="dict", required=False, default=None),
+    data=dict(type="dict", required=False),
+    token=dict(type="str", required=False, no_log=True),
+    action=dict(type="str", choices=["create", "update", "delete"], default="create"),
+)
 
 
 def run_resource(module, resource_name, path):
@@ -44,31 +50,31 @@ def run_resource(module, resource_name, path):
 
     try:
         if action in ['create', 'update']:
-            if module.params['action'] == 'create':
-                http_method = requests.put
-            else:
-                http_method = requests.patch
-            response = http_method(url,
-                                   headers=headers,
-                                   params=params,
-                                   json=data
-                                   )
-            result["changed"] = True
-            try:
-                result["response"] = response.json()
-            except requests.exceptions.JSONDecodeError:
-                result["response"] = response.text
-        elif action == "delete":
-            response = requests.delete(
+            method = "PUT" if module.params["action"] == "create" else "PATCH"
+            response = open_url(
                 url,
+                method=method,
                 headers=headers,
-                params=params
+                data=json.dumps(data or {}),
+                timeout=30,
             )
             result["changed"] = True
             try:
-                result["response"] = response.json()
-            except requests.exceptions.JSONDecodeError:
-                result["response"] = response.text
+                result["response"] = json.loads(response.read())
+            except Exception:
+                result["response"] = response.read().decode("utf-8", errors="replace")
+        elif action == "delete":
+            response = open_url(
+                url,
+                method="DELETE",
+                headers=headers,
+                timeout=30,
+            )
+            result["changed"] = True
+            try:
+                result["response"] = json.loads(response.read())
+            except Exception:
+                result["response"] = response.read().decode("utf-8", errors="replace")
     except Exception as e:
         module.fail_json(msg=f"{resource_name} API call failed: {str(e)}")
 

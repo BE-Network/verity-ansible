@@ -6,8 +6,6 @@
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 DOCUMENTATION = r'''author:
@@ -17,6 +15,36 @@ description:
 - This module interacts with the `/bundles` endpoints.
 module: bundles
 options:
+  base_url:
+    description:
+    - vNetC base URL.
+    required: true
+    type: str
+  token:
+    description:
+    - Authentication token returned by verity_auth (session cookie value).
+    required: false
+    type: str
+  username:
+    description:
+    - Username (used only if token is not provided).
+    required: false
+    type: str
+  password:
+    description:
+    - Password (used only if token is not provided).
+    required: false
+    type: str
+  action:
+    description:
+    - Action to perform against the Verity API endpoint.
+    required: false
+    type: str
+    default: create
+    choices:
+    - create
+    - update
+    - delete
   data:
     description:
     - Bundle definition object.
@@ -53,6 +81,8 @@ options:
                 required: false
                 type: str
               eth_port_paths:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   eth_port_num_eth_port_profile:
@@ -122,6 +152,8 @@ options:
                 required: false
                 type: str
               object_properties:
+                description:
+                - No description provided
                 suboptions:
                   is_for_switch:
                     default: false
@@ -131,6 +163,8 @@ options:
                     type: bool
                 type: dict
               rg_services:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   index:
@@ -148,6 +182,8 @@ options:
                     type: str
                 type: list
               user_services:
+                description:
+                - No description provided
                 elements: dict
                 suboptions:
                   index:
@@ -207,7 +243,9 @@ options:
 short_description: Manage Bundles via Verity API
 '''
 
-EXAMPLES = r'''- name: Create Bundle
+
+EXAMPLES = r'''
+- name: Create Bundle
   be_networks.verity.bundles:
     action: create
     base_url: '{{ auth_result.base_url }}'
@@ -218,27 +256,27 @@ EXAMPLES = r'''- name: Create Bundle
           device_settings: device_settings
           device_settings_ref_type_: eth_device_profiles
           eth_port_paths:
-          - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
-            eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
-            eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
-            eth_port_num_eth_port_settings_ref_type_: eth_port_settings
-            eth_port_num_gateway_profile: eth_port_num_gateway_profile
-            eth_port_num_gateway_profile_ref_type_: gateway_profile
-            index: 1
-            port_name: port_name
+            - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
+              eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
+              eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
+              eth_port_num_eth_port_settings_ref_type_: eth_port_settings
+              eth_port_num_gateway_profile: eth_port_num_gateway_profile
+              eth_port_num_gateway_profile_ref_type_: gateway_profile
+              index: 1
+              port_name: port_name
           name: name
           object_properties:
             is_for_switch: true
           rg_services:
-          - index: 1
-            row_ip_mask: row_ip_mask
+            - index: 1
+              row_ip_mask: row_ip_mask
           user_services:
-          - index: 1
-            row_app_cli_commands: row_app_cli_commands
-            row_app_connected_service: row_app_connected_service
-            row_app_connected_service_ref_type_: service
-            row_app_enable: true
-            row_ip_mask: row_ip_mask
+            - index: 1
+              row_app_cli_commands: row_app_cli_commands
+              row_app_connected_service: row_app_connected_service
+              row_app_connected_service_ref_type_: service
+              row_app_enable: true
+              row_ip_mask: row_ip_mask
     params:
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
@@ -253,27 +291,27 @@ EXAMPLES = r'''- name: Create Bundle
           device_settings: device_settings
           device_settings_ref_type_: eth_device_profiles
           eth_port_paths:
-          - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
-            eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
-            eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
-            eth_port_num_eth_port_settings_ref_type_: eth_port_settings
-            eth_port_num_gateway_profile: eth_port_num_gateway_profile
-            eth_port_num_gateway_profile_ref_type_: gateway_profile
-            index: 1
-            port_name: port_name
+            - eth_port_num_eth_port_profile: eth_port_num_eth_port_profile
+              eth_port_num_eth_port_profile_ref_type_: eth_port_profile_
+              eth_port_num_eth_port_settings: eth_port_num_eth_port_settings
+              eth_port_num_eth_port_settings_ref_type_: eth_port_settings
+              eth_port_num_gateway_profile: eth_port_num_gateway_profile
+              eth_port_num_gateway_profile_ref_type_: gateway_profile
+              index: 1
+              port_name: port_name
           name: name
           object_properties:
             is_for_switch: true
           rg_services:
-          - index: 1
-            row_ip_mask: row_ip_mask
+            - index: 1
+              row_ip_mask: row_ip_mask
           user_services:
-          - index: 1
-            row_app_cli_commands: row_app_cli_commands
-            row_app_connected_service: row_app_connected_service
-            row_app_connected_service_ref_type_: service
-            row_app_enable: true
-            row_ip_mask: row_ip_mask
+            - index: 1
+              row_app_cli_commands: row_app_cli_commands
+              row_app_connected_service: row_app_connected_service
+              row_app_connected_service_ref_type_: service
+              row_app_enable: true
+              row_ip_mask: row_ip_mask
     params:
       changeset_name: changeset_name
     token: '{{ auth_result.token }}'
@@ -293,6 +331,10 @@ response:
   returned: always
   type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible_collections.be_networks.verity.plugins.module_utils.verity_resource import run_resource, MODULE_ARGS
 
 
 def run_module():
