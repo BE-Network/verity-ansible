@@ -182,6 +182,8 @@ jobs:
         with:
           scan-args: |-
             --recursive
+            --no-resolve
+            --allow-no-lockfiles
             --format=sarif
             --output=osv-results.sarif
             .
