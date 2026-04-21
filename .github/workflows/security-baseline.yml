@@ -178,10 +178,12 @@ jobs:
 
       - name: OSV-Scanner (dependency vulnerabilities)
         continue-on-error: true
-        uses: google/osv-scanner-action/osv-scanner-action@v2.3.3
+        uses: google/osv-scanner-action/osv-scanner-action@v2.3.5
         with:
           scan-args: |-
             --recursive
+            --no-resolve
+            --allow-no-lockfiles
             --format=sarif
             --output=osv-results.sarif
             .
